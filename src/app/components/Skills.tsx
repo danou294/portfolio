@@ -35,19 +35,18 @@ export default function Skills() {
     hover: { 
       scale: 1.15, 
       y: -5, 
-      rotateZ: 2,
-      boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)"
+      rotateZ: 2
     }
   };
 
   return (
-    <section id="skills" className="bg-[#0F0F23] text-[#E2E8F0] border-t border-[#3730A3] relative overflow-hidden">
+    <section id="skills" className="bg-theme text-theme border-t border-theme relative overflow-hidden transition-colors duration-300">
       {/* Particules de fond animées */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {particlePositions.map((pos, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#8B5CF6]/40 rounded-full"
+            className="absolute w-1 h-1 bg-primary/40 rounded-full"
             style={{
               left: pos.left,
               top: pos.top,
@@ -68,7 +67,7 @@ export default function Skills() {
 
       <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <motion.h2 
-          className="text-2xl md:text-3xl font-bold text-white text-center mb-8"
+          className="text-2xl md:text-3xl font-bold text-theme text-center mb-8"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,16 +96,16 @@ export default function Skills() {
               onHoverEnd={() => setHoveredSkill(null)}
             >
               <motion.span
-                className="inline-block rounded-full bg-[#1E1B4B]/70 border border-[#3730A3] px-4 py-2 text-sm cursor-pointer relative overflow-hidden"
+                className="inline-block rounded-full bg-secondary border border-theme px-4 py-2 text-sm cursor-pointer relative overflow-hidden transition-colors duration-300"
               >
-                <span className="relative z-10">
+                <span className="relative z-10 text-secondary-foreground">
                   {skill}
                 </span>
                 
                 {/* Effet de brillance au survol - UNIQUEMENT sur le tag ovale */}
                 {hoveredSkill === skill && (
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#8B5CF6]/20 to-transparent rounded-full"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent rounded-full"
                     initial={{ x: "-100%" }}
                     animate={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
@@ -120,7 +119,7 @@ export default function Skills() {
                   {[...Array(6)].map((_, j) => (
                     <motion.div
                       key={j}
-                      className="absolute w-1 h-1 bg-[#8B5CF6] rounded-full"
+                      className="absolute w-1 h-1 bg-primary rounded-full"
                       initial={{ 
                         x: 0, 
                         y: 0, 
