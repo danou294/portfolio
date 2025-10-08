@@ -153,11 +153,11 @@ export default function Skills() {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <div className="text-center mb-4">
-            <span className="text-sm text-[#E2E8F0]/70">Niveau d&apos;expertise global</span>
+            <span className="text-sm text-muted-foreground">Niveau d&apos;expertise global</span>
           </div>
-          <div className="w-full bg-[#1E1B4B] rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] rounded-full"
+              className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
               initial={{ width: 0 }}
               whileInView={{ width: "85%" }}
               viewport={{ once: true }}

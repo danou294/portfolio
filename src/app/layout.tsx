@@ -7,6 +7,13 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['400', '500', 
 export const metadata = {
   title: 'Daniel Levy – Développeur',
   description: 'Portfolio développeur fullstack et mobile',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' }
+    ],
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

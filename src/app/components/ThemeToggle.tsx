@@ -8,10 +8,10 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
+      className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 relative cursor-pointer ${
         theme === 'light' 
           ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' 
-          : 'bg-gray-800 hover:bg-gray-700 text-gray-200'
+          : 'bg-card hover:bg-secondary text-foreground border border-border shadow-lg'
       }`}
       aria-label={`Basculer vers le mode ${theme === 'light' ? 'sombre' : 'clair'}`}
       whileHover={{ scale: 1.05 }}
@@ -19,7 +19,7 @@ export default function ThemeToggle() {
     >
       {/* Icône Soleil */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute flex items-center justify-center"
         animate={{
           opacity: theme === 'light' ? 1 : 0,
           scale: theme === 'light' ? 1 : 0.8,
@@ -38,7 +38,7 @@ export default function ThemeToggle() {
 
       {/* Icône Lune */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute flex items-center justify-center"
         animate={{
           opacity: theme === 'dark' ? 1 : 0,
           scale: theme === 'dark' ? 1 : 0.8,

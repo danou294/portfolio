@@ -13,8 +13,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
@@ -28,43 +27,34 @@ export default function Contact() {
         <motion.div
           className="mt-12 flex flex-wrap justify-center gap-6"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <motion.a 
+          <a 
             href="mailto:danielevy29@gmail.com" 
-            className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-xl hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-xl hover:shadow-xl hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
           >
             <span className="relative z-10">📧 Me contacter</span>
-            <motion.div
-              className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-          </motion.a>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </a>
           
-          <motion.a 
+          <a 
             href="https://www.linkedin.com/in/daniellevy2904/" 
             target="_blank" 
             rel="noreferrer" 
-            className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center px-8 py-4 border-2 border-primary text-theme font-semibold rounded-xl hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300"
           >
             🔗 LinkedIn
-          </motion.a>
+          </a>
           
-          <motion.a 
+          <a 
             href="https://github.com/danou294" 
             target="_blank" 
             rel="noreferrer" 
-            className="inline-flex items-center px-8 py-4 border-2 border-theme text-theme font-semibold rounded-xl hover:bg-secondary hover:border-primary hover:text-primary transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center px-8 py-4 border-2 border-theme text-theme font-semibold rounded-xl hover:bg-secondary hover:border-primary hover:text-primary hover:scale-105 transition-all duration-300"
           >
             💻 GitHub
-          </motion.a>
+          </a>
         </motion.div>
       </div>
     </section>
