@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Skills() {
+  const { t } = useLanguage();
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   
   const skills = [
@@ -73,7 +75,7 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          🚀 Compétences
+          {t("skills.title")}
         </motion.h2>
         
         <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -163,6 +165,45 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 2, ease: "easeOut" }}
             />
+          </div>
+        </motion.div>
+
+        {/* Section "Ce que je peux apporter" */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="text-2xl font-bold text-theme mb-8 text-center">
+            {t("skills.subtitle")}
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              { key: 'architecture', title: t('skills.sections.architecture.title'), description: t('skills.sections.architecture.description') },
+              { key: 'apis', title: t('skills.sections.apis.title'), description: t('skills.sections.apis.description') },
+              { key: 'devops', title: t('skills.sections.devops.title'), description: t('skills.sections.devops.description') },
+              { key: 'ui', title: t('skills.sections.ui.title'), description: t('skills.sections.ui.description') }
+            ].map((section, index) => (
+              <motion.div
+                key={section.key}
+                className="p-6 rounded-2xl bg-card border border-theme/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h4 className="text-lg font-semibold text-card-foreground mb-3">
+                  {section.title}
+                </h4>
+                <p className="text-secondary-foreground text-sm leading-relaxed">
+                  {section.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

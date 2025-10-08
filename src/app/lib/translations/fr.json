@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences", 
+    "projects": "Projets",
+    "contact": "Contact",
+    "downloadCV": "Télécharger le CV"
+  },
+  "hero": {
+    "title": "Développeur Full-Stack",
+    "subtitle": "Je crée des applications web et mobiles modernes avec React, Node.js et Flutter",
+    "available": "Disponible pour de nouveaux projets",
+    "technologies": {
+      "react": "React",
+      "nodejs": "Node.js", 
+      "flutter": "Flutter",
+      "mongodb": "MongoDB",
+      "firestore": "Firestore",
+      "docker": "Docker",
+      "aws": "AWS"
+    },
+    "projects": {
+      "codesphere": {
+        "title": "CodeSphere",
+        "tech": "React • TypeScript • Monaco Editor"
+      },
+      "butter": {
+        "title": "Butter",
+        "tech": "Flutter • Firebase • Google Maps"
+      }
+    },
+    "cta": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Développeur Fullstack & Mobile. J'aime concevoir des produits de bout en bout : modélisation NoSQL, intégration d'API, interfaces modernes, et mise en production (Docker, AWS).",
+    "approach": {
+      "title": "💡 Approche",
+      "text": "Je privilégie une approche agile et centrée utilisateur, avec un focus sur la performance et la maintenabilité du code."
+    },
+    "objective": "Objectif : Vitesse, Efficacité, Scalabilité.",
+    "sections": {
+      "web": {
+        "title": "🌐 Web",
+        "tech": "Node.js, React / Next.js (TypeScript)"
+      },
+      "mobile": {
+        "title": "📱 Mobile", 
+        "tech": "Flutter (Dart)"
+      },
+      "data": {
+        "title": "💾 Data",
+        "tech": "Firestore, MongoDB, ETL & automatisations"
+      }
+    }
+  },
+  "skills": {
+    "title": "🚀 Compétences",
+    "subtitle": "Ce que je peux apporter",
+    "sections": {
+      "architecture": {
+        "title": "Architecture & modèles NoSQL",
+        "description": "Conception de bases de données et architecture scalable"
+      },
+      "apis": {
+        "title": "APIs & intégrations propres",
+        "description": "Développement d'APIs REST et intégrations tierces"
+      },
+      "devops": {
+        "title": "CI/CD, Docker, déploiements",
+        "description": "Automatisation et déploiement continu"
+      },
+      "ui": {
+        "title": "UI réactive & performante",
+        "description": "Interfaces modernes et optimisées"
+      }
+    }
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "subtitle": "Découvrez mes réalisations récentes",
+    "discover": "Découvrir le projet",
+    "articles": {
+      "codesphere": {
+        "title": "🚀 CodeSphere — L'IDE web nouvelle génération",
+        "subtitle": "Un environnement de développement complet dans le navigateur",
+        "tags": ["SaaS", "IDE", "React", "TypeScript"],
+        "content": "J'en avais marre d'installer 10 outils avant même d'écrire une ligne de code. CodeSphere est né de cette idée simple : coder devrait être aussi rapide que l'inspiration.\n\n⸻\n\n💡 Vision\nCodeSphere veut devenir l'IDE de référence pour le développement web moderne. Un environnement où tout est intégré : éditeur, terminal, base de données, et déploiement. L'objectif : que le développeur se concentre sur son code, pas sur sa configuration.\n\n\"Trop de temps perdu en setup, pas assez en création — CodeSphere inverse cette équation.\"\n\n⸻\n\n⚙️ Stack technique\n• React 18 + TypeScript : interface moderne et performante\n• Monaco Editor : éditeur de code professionnel (même moteur que VS Code)\n• Django REST API : backend robuste et scalable\n• PostgreSQL : base de données relationnelle\n• Docker : containerisation et déploiement\n• OpenAI API : assistance IA intégrée\n• Stripe : gestion des paiements\n\n⸻\n\n🧠 Expérience utilisateur\nL'expérience est pensée pour être fluide et intuitive :\n1. L'utilisateur ouvre CodeSphere et crée un nouveau projet\n2. Il code directement dans l'éditeur avec autocomplétion et coloration syntaxique\n3. Il peut ouvrir un terminal intégré pour installer des dépendances\n4. Il peut tester son code en temps réel avec un serveur de développement\n5. Il peut déployer son projet en un clic\n\nL'interface reprend les codes des IDE professionnels — familier, puissant, efficace — mais accessible depuis n'importe quel navigateur.\n\n⸻\n\n💻 Fonctionnalités principales\n• Éditeur de code avec coloration syntaxique et autocomplétion\n• Terminal intégré pour les commandes système\n• Gestion de projets avec structure de fichiers\n• Serveur de développement intégré\n• Base de données PostgreSQL accessible\n• Déploiement automatique\n• Assistance IA pour le code\n• Gestion des dépendances npm/pip\n• Support multi-langages (JavaScript, Python, HTML, CSS)\n• Sauvegarde automatique dans le cloud\n\n⸻\n\n🔩 Backend & intégration IA\nCodeSphere utilise Django pour son backend, avec une architecture modulaire qui permet d'ajouter facilement de nouvelles fonctionnalités. L'intégration OpenAI permet d'assister le développeur avec des suggestions de code intelligentes.\n\nLa partie la plus complexe a été la gestion des environnements d'exécution : chaque projet doit être isolé, sécurisé, et performant. Une architecture de containers Docker permet de gérer cette complexité tout en gardant l'expérience utilisateur simple.\n\n⸻\n\n💪 Défis & apprentissages\n• Complexité technique → architecture modulaire et documentation claire\n• Performance → optimisation des requêtes et mise en cache\n• Sécurité → isolation des environnements et validation des entrées\n• UX → interface familière mais innovante\n\nCodeSphere m'a appris à penser produit avant technique. Aujourd'hui, je garde cette approche sur chaque nouveau projet : d'abord l'expérience utilisateur, ensuite l'implémentation.\n\n⸻\n\n💬 Ma contribution\n\"Je sais allier technique et produit.\nJe sais construire un produit SaaS complet, de la conception au déploiement.\nEt surtout, je garde une approche réaliste et motivée : apprendre, itérer, améliorer.\"\n\nCodeSphere n'est qu'un MVP, mais il représente parfaitement ma façon de travailler :\npenser produit, coder proprement, livrer rapidement, apprendre constamment.\n\n⸻\n\n🚀 Vision future\n• Support de plus de langages (Go, Rust, Java...)\n• Collaboration en temps réel entre développeurs\n• Intégration avec GitHub et GitLab\n• Templates de projets prêts à l'emploi\n• Marketplace d'extensions\n• API publique pour les intégrations tierces\n\nCodeSphere doit devenir l'IDE qu'on ouvre en premier, pas le dernier.\n\n⸻\n\n🎯 Ce que ce projet dit de moi\n\"Je sais transformer une frustration en solution. Je suis capable de créer un produit technique complexe tout en gardant l'expérience utilisateur simple. Et surtout, je reste curieux, humble, et toujours prêt à apprendre.\"\n\nCodeSphere, c'est le symbole de ma passion pour le développement et de ma volonté de simplifier la vie des développeurs : je construis, j'apprends, j'itère, et je transforme les idées en expériences concrètes.\n\n⸻\n\n\"CodeSphere, c'est mon premier vrai produit SaaS.\nJ'y ai mis ma curiosité, mes erreurs, et beaucoup de café — mais surtout, ma passion du web.\"",
+        "githubLink": "https://github.com/danou294/codesphere",
+        "liveLink": "https://codesphere.fr"
+      },
+      "butter": {
+        "title": "🧈 Butter — L'app mobile qui trouve les bons restos à ta place",
+        "subtitle": "Une application mobile Flutter pour découvrir les meilleurs restaurants",
+        "tags": ["Mobile", "Flutter", "Firebase", "Food"],
+        "content": "Un soir à Paris, deux amies cherchaient un restaurant depuis deux applis différentes — vingt-cinq minutes plus tard, elles mangeaient des pâtes. Ce jour-là, on s'est dit : « pourquoi il n'existe pas une appli où il n'y a que des bons restos ? » C'est comme ça qu'est née Butter — une app qui centralise les meilleures adresses, dans une interface moderne, fiable et intuitive.\n\n⸻\n\n💡 Vision\nButter veut devenir le réflexe de recherche quand on sort dîner. Une app de confiance, qui combine la simplicité d'un feed social à la fiabilité d'un guide sélectif. L'objectif : que la sortie au restaurant soit agréable du début à la fin, en commençant par une recherche fluide, claire et efficace.\n\n\"Trop d'infos, pas toujours fiables, et pas toutes au même endroit — Butter rassemble tout ce qu'il faut, et seulement ce qu'il faut.\"\n\n⸻\n\n⚙️ Stack technique\n• Flutter (Dart) : développement cross-platform pour iOS et Android\n• Firebase : Authentification, Firestore, et stockage des données restaurants\n• Google Maps SDK : géolocalisation, ouverture d'itinéraires dans Plans / Waze\n• API Restaurants (custom Firestore) : base de données exclusive, alimentée manuellement\n• Intégration Apple : gestion complète du déploiement sur l'écosystème iOS (App Store, certificats, provisioning, sandbox)\n\n⸻\n\n📱 Expérience utilisateur\nL'expérience est pensée pour être naturelle et visuelle :\n1. L'utilisateur ouvre l'app et clique sur plusieurs filtres (ex. 8e arrondissement, italien, €€)\n2. Il parcourt un feed de restaurants illustré avec photos, menus et avis\n3. Un clic sur un restaurant ouvre une fiche complète : menu, localisation, lien de réservation, ou navigation via Waze / Plans\n4. Il peut sauvegarder ses adresses préférées et y revenir plus tard\n\nL'interface reprend les codes des réseaux sociaux — fluide, scrollable, engageante — mais au service de la gastronomie.\n\n⸻\n\n🧩 Fonctionnalités principales\n• Interface de type feed (photos, menus, ambiance)\n• Filtres personnalisés : quartier, cuisine, prix\n• Fiches restaurants détaillées avec lien de réservation\n• Sauvegarde d'adresses favorites\n• Intégration navigation : ouverture directe dans Plans / Waze\n• Base de données exclusive : sélection manuelle des restaurants \"validés Butter\"\n\nAucune IA ici, juste de la curation humaine et de la qualité manuelle — pour garantir que tout ce qui est affiché est réellement bon.\n\n⸻\n\n🧠 Partie technique & développement\nButter a été développée entièrement en Flutter, pour permettre un design élégant, performant et compatible iOS/Android. La gestion Firebase simplifie la sauvegarde des données utilisateurs, tandis que l'intégration Google Maps rend l'expérience géolocalisée et fluide.\n\nLa partie la plus complexe a été la gestion du déploiement Apple, avec la configuration des certificats, profils de provisioning et sandbox pour la publication sur l'App Store. Une étape longue et exigeante, mais formatrice sur tout le processus de publication mobile professionnel.\n\n⸻\n\n👥 L'équipe\n• Daniel Levy — Développeur Flutter & Firebase\nConception, développement complet et intégration technique de l'application.\n• Laura Derhy & Noa Afriat — Fondatrices & ambassadrices du projet\nVision produit, accompagnement stratégique et direction artistique.\n\n\"Je remercie Laura et Noa pour leur confiance, leur accompagnement, et leur soutien dans les moments les plus durs du projet. Butter, c'est une vraie aventure humaine.\"\n\n⸻\n\n💪 Défis & solutions\n• Trop d'infos dispersées → centralisation des meilleures adresses dans une seule base\n• UX mobile exigeante → design sobre, navigation fluide, filtres clairs\n• Déploiement Apple → maîtrise de l'écosystème iOS et de la distribution App Store\n\nButter, c'est un produit fini, concret et fonctionnel, mais aussi un laboratoire d'apprentissage : gestion Firebase, intégration SDKs, déploiement mobile complet.\n\n⸻\n\n🚀 Vision future\n• Étendre Butter à d'autres grandes villes (Londres, Tel Aviv, Barcelone...)\n• Ajouter la réservation directe in-app et un système de recommandations personnalisées\n• Développer une interface \"influenceur\" pour partager ses bonnes adresses\n• Devenir une référence lifestyle et food autour de la découverte et du partage\n\nButter doit devenir la première app qu'on ouvre quand on a faim, pas la dernière.\n\n⸻\n\n🎯 Ce que ce projet dit de moi\n\"Je sais allier technique et produit. Je suis capable de créer une app mobile de A à Z — du design au déploiement. Et surtout, je reste motivé, curieux et reconnaissant envers les gens qui m'accompagnent.\"\n\nButter, c'est le symbole de ma progression technique et de ma maturité de développeur produit : je construis, j'apprends, je m'adapte, et je transforme les idées en expériences concrètes.",
+        "githubLink": "https://github.com/danou294/butter",
+        "liveLink": "https://www.linkedin.com/company/butterappli/posts/?feedView=all",
+        "socialLinks": {
+          "linkedin": "https://www.linkedin.com/company/butterappli/posts/?feedView=all",
+          "instagram": "https://www.instagram.com/butterguide/",
+          "tiktok": "https://www.tiktok.com/@butterguide?lang=fr"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Prêt à collaborer ?",
+    "collaborate": "On travaille ensemble ?",
+      "contactMe": "Me contacter",
+      "email": "daniel.levy.dev@gmail.com",
+      "phone": "+33 6 12 34 56 78",
+      "location": "Paris, France",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "subject": "Sujet",
+        "message": "Message",
+        "send": "Envoyer le message"
+      }
+    },
+    "article": {
+      "backToProjects": "Retour aux projets",
+      "viewCode": "Voir le code",
+      "tryNow": "Essayer maintenant",
+      "followLinkedIn": "Suivre sur LinkedIn",
+      "developmentNotice": "Application en cours de développement - Les liens seront disponibles prochainement",
+      "followProject": "Suivez le projet"
+  }
+}

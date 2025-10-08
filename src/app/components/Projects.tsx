@@ -1,10 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { articles, Article } from "../lib/articles";
+import { getArticles, Article } from "../lib/articles-new";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Projects() {
+  const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Obtenir les articles traduits
+  const articles = getArticles(language);
   
   // Simuler un chargement
   useEffect(() => {
@@ -66,7 +71,7 @@ export default function Projects() {
 
           <div className="text-center pt-2">
             <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-primary text-theme font-semibold transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/25">
-              Lire l'article
+              {t("projects.discover")}
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
@@ -115,11 +120,11 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-theme">
-            Mes Projets
+            {t("projects.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6"></div>
           <p className="text-xl text-secondary-foreground max-w-3xl mx-auto leading-relaxed">
-            Découvrez mes réalisations en détail avec des articles techniques approfondis.
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -143,20 +148,7 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <motion.a
-            href="#contact"
-            className="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-2xl text-lg hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="relative z-10">Discutons de votre projet !</span>
-            <motion.div
-              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <svg className="ml-3 w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </motion.a>
+        
         </motion.div>
       </div>
     </section>

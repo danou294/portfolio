@@ -131,7 +131,7 @@ Je sais construire un produit SaaS complet, de la conception au déploiement.
 Et surtout, je garde une approche réaliste et motivée : apprendre, itérer, améliorer."
 
 CodeSphere n'est qu'un MVP, mais il représente parfaitement ma façon de travailler :
-penser produit, coder propre, livrer vite, apprendre encore.
+penser produit, coder proprement, livrer rapidement, apprendre constamment.
 
 ⸻
 

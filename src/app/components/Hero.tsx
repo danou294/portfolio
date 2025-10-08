@@ -2,8 +2,10 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -66,11 +68,11 @@ export default function Hero() {
           >
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-theme text-sm font-medium">
               <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-              Disponible pour de nouveaux projets
+              {t("hero.available")}
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-theme">
-              Développeur{" "}
+              {t("hero.title").split(" ")[0]}{" "}
               <motion.span
                 className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary"
                 animate={{
@@ -85,15 +87,17 @@ export default function Hero() {
                   backgroundSize: "200% 200%",
                 }}
               >
-                Full-Stack
+                {t("hero.title").split(" ")[1]}
               </motion.span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Je crée des applications web et mobiles modernes avec{" "}
-              <span className="text-blue-600 dark:text-blue-400 font-semibold">React</span>,{" "}
-              <span className="text-blue-600 dark:text-blue-400 font-semibold">Node.js</span> et{" "}
-              <span className="text-blue-600 dark:text-blue-400 font-semibold">Flutter</span>
+              {t("hero.subtitle").split("React")[0]}
+              <span className="text-blue-600 dark:text-blue-400 font-semibold">{t("hero.technologies.react")}</span>
+              {t("hero.subtitle").split("React")[1].split("Node.js")[0]}
+              <span className="text-blue-600 dark:text-blue-400 font-semibold">{t("hero.technologies.nodejs")}</span>
+              {t("hero.subtitle").split("Node.js")[1].split("Flutter")[0]}
+              <span className="text-blue-600 dark:text-blue-400 font-semibold">{t("hero.technologies.flutter")}</span>
             </p>
           </motion.div>
 
@@ -103,7 +107,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            {["React/Next.js", "Node.js", "Flutter", "MongoDB", "Firestore", "Docker", "AWS"].map(
+            {[t("hero.technologies.react"), t("hero.technologies.nodejs"), t("hero.technologies.flutter"), t("hero.technologies.mongodb"), t("hero.technologies.firestore"), t("hero.technologies.docker"), t("hero.technologies.aws")].map(
               (tag, index) => (
                 <motion.span
                   key={tag}
@@ -129,7 +133,7 @@ export default function Hero() {
               href="#projects"
               className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-xl hover:shadow-xl hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
             >
-              <span className="relative z-10">Voir mes projets</span>
+              <span className="relative z-10">{t("hero.cta")}</span>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <svg className="ml-2 w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -199,8 +203,8 @@ export default function Hero() {
                     priority
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-card-foreground text-center mb-2">CodeSphere</h3>
-                <p className="text-center text-sm text-muted-foreground">React • TypeScript • Monaco Editor</p>
+                <h3 className="text-lg font-semibold text-card-foreground text-center mb-2">{t("hero.projects.codesphere.title")}</h3>
+                <p className="text-center text-sm text-muted-foreground">{t("hero.projects.codesphere.tech")}</p>
               </div>
             </motion.div>
 
@@ -219,8 +223,8 @@ export default function Hero() {
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-card-foreground text-center mb-2">Butter</h3>
-                <p className="text-center text-sm text-muted-foreground">Flutter • Firebase • Google Maps</p>
+                <h3 className="text-lg font-semibold text-card-foreground text-center mb-2">{t("hero.projects.butter.title")}</h3>
+                <p className="text-center text-sm text-muted-foreground">{t("hero.projects.butter.tech")}</p>
               </div>
             </motion.div>
 

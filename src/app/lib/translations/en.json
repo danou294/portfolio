@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills", 
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "hero": {
+    "title": "Full-Stack Developer",
+    "subtitle": "I create modern web and mobile applications with React, Node.js and Flutter",
+    "available": "Available for new projects",
+    "technologies": {
+      "react": "React",
+      "nodejs": "Node.js", 
+      "flutter": "Flutter",
+      "mongodb": "MongoDB",
+      "firestore": "Firestore",
+      "docker": "Docker",
+      "aws": "AWS"
+    },
+    "projects": {
+      "codesphere": {
+        "title": "CodeSphere",
+        "tech": "React • TypeScript • Monaco Editor"
+      },
+      "butter": {
+        "title": "Butter",
+        "tech": "Flutter • Firebase • Google Maps"
+      }
+    },
+    "cta": "View my projects"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Fullstack & Mobile Developer. I love designing products end-to-end: NoSQL modeling, API integration, modern interfaces, and production deployment (Docker, AWS).",
+    "approach": {
+      "title": "💡 Approach",
+      "text": "I favor an agile and user-centered approach, with a focus on performance and code maintainability."
+    },
+    "objective": "Objective: Speed, Efficiency, Scalability.",
+    "sections": {
+      "web": {
+        "title": "🌐 Web",
+        "tech": "Node.js, React / Next.js (TypeScript)"
+      },
+      "mobile": {
+        "title": "📱 Mobile", 
+        "tech": "Flutter (Dart)"
+      },
+      "data": {
+        "title": "💾 Data",
+        "tech": "Firestore, MongoDB, ETL & automation"
+      }
+    }
+  },
+  "skills": {
+    "title": "🚀 Skills",
+    "subtitle": "What I can bring",
+    "sections": {
+      "architecture": {
+        "title": "Architecture & NoSQL models",
+        "description": "Database design and scalable architecture"
+      },
+      "apis": {
+        "title": "APIs & clean integrations",
+        "description": "REST API development and third-party integrations"
+      },
+      "devops": {
+        "title": "CI/CD, Docker, deployments",
+        "description": "Automation and continuous deployment"
+      },
+      "ui": {
+        "title": "Reactive & performant UI",
+        "description": "Modern and optimized interfaces"
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Discover my recent achievements",
+    "discover": "Discover the project",
+    "articles": {
+      "codesphere": {
+        "title": "🚀 CodeSphere — Next-generation web IDE",
+        "subtitle": "A complete development environment in the browser",
+        "tags": ["SaaS", "IDE", "React", "TypeScript"],
+        "content": "I was tired of installing 10 tools before even writing a line of code. CodeSphere was born from this simple idea: coding should be as fast as inspiration.\n\n⸻\n\n💡 Vision\nCodeSphere wants to become the reference IDE for modern web development. An environment where everything is integrated: editor, terminal, database, and deployment. The goal: let the developer focus on their code, not on their configuration.\n\n\"Too much time lost in setup, not enough in creation — CodeSphere reverses this equation.\"\n\n⸻\n\n⚙️ Technical stack\n• React 18 + TypeScript: modern and performant interface\n• Monaco Editor: professional code editor (same engine as VS Code)\n• Django REST API: robust and scalable backend\n• PostgreSQL: relational database\n• Docker: containerization and deployment\n• OpenAI API: integrated AI assistance\n• Stripe: payment management\n\n⸻\n\n🧠 User experience\nThe experience is designed to be fluid and intuitive:\n1. User opens CodeSphere and creates a new project\n2. They code directly in the editor with autocompletion and syntax highlighting\n3. They can open an integrated terminal to install dependencies\n4. They can test their code in real-time with a development server\n5. They can deploy their project with one click\n\nThe interface follows professional IDE codes — familiar, powerful, efficient — but accessible from any browser.\n\n⸻\n\n💻 Main features\n• Code editor with syntax highlighting and autocompletion\n• Integrated terminal for system commands\n• Project management with file structure\n• Integrated development server\n• Accessible PostgreSQL database\n• Automatic deployment\n• AI assistance for code\n• npm/pip dependency management\n• Multi-language support (JavaScript, Python, HTML, CSS)\n• Automatic cloud backup\n\n⸻\n\n🔩 Backend & AI integration\nCodeSphere uses Django for its backend, with a modular architecture that allows easy addition of new features. OpenAI integration assists the developer with intelligent code suggestions.\n\nThe most complex part was managing execution environments: each project must be isolated, secure, and performant. A Docker container architecture manages this complexity while keeping the user experience simple.\n\n⸻\n\n💪 Challenges & learnings\n• Technical complexity → modular architecture and clear documentation\n• Performance → query optimization and caching\n• Security → environment isolation and input validation\n• UX → familiar but innovative interface\n\nCodeSphere taught me to think product before technique. Today, I keep this approach on every new project: first user experience, then implementation.\n\n⸻\n\n💬 My contribution\n\"I know how to combine technique and product.\nI know how to build a complete SaaS product, from conception to deployment.\nAnd above all, I keep a realistic and motivated approach: learn, iterate, improve.\"\n\nCodeSphere is just an MVP, but it perfectly represents my way of working:\nthink product, code cleanly, deliver quickly, learn constantly.\n\n⸻\n\n🚀 Future vision\n• Support for more languages (Go, Rust, Java...)\n• Real-time collaboration between developers\n• Integration with GitHub and GitLab\n• Ready-to-use project templates\n• Extension marketplace\n• Public API for third-party integrations\n\nCodeSphere must become the IDE you open first, not last.\n\n⸻\n\n🎯 What this project says about me\n\"I know how to transform frustration into solution. I'm capable of creating a complex technical product while keeping the user experience simple. And above all, I stay curious, humble, and always ready to learn.\"\n\nCodeSphere is the symbol of my passion for development and my willingness to simplify developers' lives: I build, I learn, I iterate, and I transform ideas into concrete experiences.\n\n⸻\n\n\"CodeSphere is my first real SaaS product.\nI put my curiosity, my mistakes, and a lot of coffee into it — but above all, my passion for the web.\"",
+        "githubLink": "https://github.com/danou294/codesphere",
+        "liveLink": "https://codesphere.fr"
+      },
+      "butter": {
+        "title": "🧈 Butter — The mobile app that finds good restaurants for you",
+        "subtitle": "A Flutter mobile application to discover the best restaurants",
+        "tags": ["Mobile", "Flutter", "Firebase", "Food"],
+        "content": "One evening in Paris, two friends were looking for a restaurant using two different apps — twenty-five minutes later, they were eating pasta. That day, we said to ourselves: \"why isn't there an app where there are only good restaurants?\" That's how Butter was born — an app that centralizes the best addresses, in a modern, reliable and intuitive interface.\n\n⸻\n\n💡 Vision\nButter wants to become the search reflex when going out to dinner. A trusted app that combines the simplicity of a social feed with the reliability of a selective guide. The goal: make the restaurant outing enjoyable from start to finish, starting with a fluid, clear and efficient search.\n\n\"Too much info, not always reliable, and not all in the same place — Butter brings together everything you need, and only what you need.\"\n\n⸻\n\n⚙️ Technical stack\n• Flutter (Dart): cross-platform development for iOS and Android\n• Firebase: Authentication, Firestore, and restaurant data storage\n• Google Maps SDK: geolocation, route opening in Maps / Waze\n• Custom Restaurant API (Firestore): exclusive database, manually fed\n• Apple integration: complete management of iOS ecosystem deployment (App Store, certificates, provisioning, sandbox)\n\n⸻\n\n📱 User experience\nThe experience is designed to be natural and visual:\n1. User opens the app and clicks on several filters (e.g. 8th arrondissement, Italian, €€)\n2. They browse a feed of restaurants illustrated with photos, menus and reviews\n3. A click on a restaurant opens a complete sheet: menu, location, reservation link, or navigation via Waze / Maps\n4. They can save their favorite addresses and return to them later\n\nThe interface follows social media codes — fluid, scrollable, engaging — but in service of gastronomy.\n\n⸻\n\n🧩 Main features\n• Feed-type interface (photos, menus, ambiance)\n• Custom filters: neighborhood, cuisine, price\n• Detailed restaurant sheets with reservation link\n• Save favorite addresses\n• Navigation integration: direct opening in Maps / Waze\n• Exclusive database: manual selection of \"Butter validated\" restaurants\n\nNo AI here, just human curation and manual quality — to guarantee that everything displayed is really good.\n\n⸻\n\n🧠 Technical part & development\nButter was developed entirely in Flutter, to allow elegant, performant and iOS/Android compatible design. Firebase management simplifies user data storage, while Google Maps integration makes the experience geolocated and fluid.\n\nThe most complex part was managing Apple deployment, with configuring certificates, provisioning profiles and sandbox for App Store publication. A long and demanding step, but formative on the entire professional mobile publication process.\n\n⸻\n\n👥 The team\n• Daniel Levy — Flutter & Firebase Developer\nDesign, complete development and technical integration of the application.\n• Laura Derhy & Noa Afriat — Founders & project ambassadors\nProduct vision, strategic support and artistic direction.\n\n\"I thank Laura and Noa for their trust, their support, and their encouragement during the hardest moments of the project. Butter is a real human adventure.\"\n\n⸻\n\n💪 Challenges & solutions\n• Too much scattered info → centralization of best addresses in a single database\n• Demanding mobile UX → sober design, fluid navigation, clear filters\n• Apple deployment → mastery of iOS ecosystem and App Store distribution\n\nButter is a finished, concrete and functional product, but also a learning laboratory: Firebase management, SDK integration, complete mobile deployment.\n\n⸻\n\n🚀 Future vision\n• Extend Butter to other major cities (London, Tel Aviv, Barcelona...)\n• Add direct in-app reservation and personalized recommendation system\n• Develop an \"influencer\" interface to share good addresses\n• Become a lifestyle and food reference around discovery and sharing\n\nButter must become the first app you open when hungry, not the last.\n\n⸻\n\n🎯 What this project says about me\n\"I know how to combine technique and product. I'm capable of creating a mobile app from A to Z — from design to deployment. And above all, I stay motivated, curious and grateful to the people who accompany me.\"\n\nButter is the symbol of my technical progression and my maturity as a product developer: I build, I learn, I adapt, and I transform ideas into concrete experiences.",
+        "githubLink": "https://github.com/danou294/butter",
+        "liveLink": "https://www.linkedin.com/company/butterappli/posts/?feedView=all",
+        "socialLinks": {
+          "linkedin": "https://www.linkedin.com/company/butterappli/posts/?feedView=all",
+          "instagram": "https://www.instagram.com/butterguide/",
+          "tiktok": "https://www.tiktok.com/@butterguide?lang=fr"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Ready to collaborate?",
+    "collaborate": "Shall we work together?",
+      "contactMe": "Contact me",
+      "email": "daniel.levy.dev@gmail.com",
+      "phone": "+33 6 12 34 56 78",
+      "location": "Paris, France",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send message"
+      }
+    },
+    "article": {
+      "backToProjects": "Back to projects",
+      "viewCode": "View code",
+      "tryNow": "Try now",
+      "followLinkedIn": "Follow on LinkedIn",
+      "developmentNotice": "Application under development - Links will be available soon",
+      "followProject": "Follow the project"
+  }
+}

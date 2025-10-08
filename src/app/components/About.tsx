@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="bg-secondary/30 text-secondary-foreground transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-start">
@@ -12,33 +14,34 @@ export default function About() {
           className="space-y-6"
         >
           <div className="space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold text-theme">À propos</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-theme">{t("about.title")}</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
           </div>
           
           <p className="text-lg text-secondary-foreground leading-relaxed">
-            Développeur <span className="text-gray-900 dark:text-primary font-semibold">Fullstack & Mobile</span>. 
-            J'aime concevoir des produits de bout en bout : modélisation{" "}
-            <span className="text-gray-900 dark:text-accent font-semibold">NoSQL</span>, intégration d'API, 
-            interfaces modernes, et mise en production (Docker, AWS).
+            {t("about.subtitle").split("Fullstack & Mobile")[0]}
+            <span className="text-gray-900 dark:text-primary font-semibold">Fullstack & Mobile</span>
+            {t("about.subtitle").split("Fullstack & Mobile")[1].split("NoSQL")[0]}
+            <span className="text-gray-900 dark:text-accent font-semibold">NoSQL</span>
+            {t("about.subtitle").split("NoSQL")[1]}
           </p>
           
           <p className="text-lg text-secondary-foreground leading-relaxed">
-            <span className="text-gray-900 dark:text-primary font-semibold">Objectif</span> : livrer vite, propre, et scalable.
+            <span className="text-gray-900 dark:text-primary font-semibold">{t("about.objective").split(" : ")[0]}</span> : {t("about.objective").split(" : ")[1]}
           </p>
           
           <div className="grid sm:grid-cols-2 gap-4 pt-4">
             <div className="space-y-2">
-              <h3 className="text-gray-900 dark:text-primary font-semibold">🌐 Web</h3>
-              <p className="text-secondary-foreground">Node.js, React / Next.js (TypeScript)</p>
+              <h3 className="text-gray-900 dark:text-primary font-semibold">{t("about.sections.web.title")}</h3>
+              <p className="text-secondary-foreground">{t("about.sections.web.tech")}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-gray-900 dark:text-primary font-semibold">📱 Mobile</h3>
-              <p className="text-secondary-foreground">Flutter (Dart)</p>
+              <h3 className="text-gray-900 dark:text-primary font-semibold">{t("about.sections.mobile.title")}</h3>
+              <p className="text-secondary-foreground">{t("about.sections.mobile.tech")}</p>
             </div>
             <div className="space-y-2 sm:col-span-2">
-              <h3 className="text-gray-900 dark:text-primary font-semibold">💾 Data</h3>
-              <p className="text-secondary-foreground">Firestore, MongoDB, ETL & automatisations</p>
+              <h3 className="text-gray-900 dark:text-primary font-semibold">{t("about.sections.data.title")}</h3>
+              <p className="text-secondary-foreground">{t("about.sections.data.tech")}</p>
             </div>
           </div>
         </motion.div>
@@ -70,11 +73,13 @@ export default function About() {
           </div>
           
           <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 p-6">
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-primary mb-3">💡 Approche</h4>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-primary mb-3">{t("about.approach.title")}</h4>
             <p className="text-secondary-foreground text-sm leading-relaxed">
-              Je privilégie une approche <span className="text-gray-900 dark:text-primary font-semibold">agile</span> et 
-              <span className="text-gray-900 dark:text-primary font-semibold"> centrée utilisateur</span>, avec un focus sur 
-              la performance et la maintenabilité du code.
+              {t("about.approach.text").split("agile")[0]}
+              <span className="text-gray-900 dark:text-primary font-semibold">agile</span>
+              {t("about.approach.text").split("agile")[1].split("centrée utilisateur")[0]}
+              <span className="text-gray-900 dark:text-primary font-semibold">centrée utilisateur</span>
+              {t("about.approach.text").split("centrée utilisateur")[1]}
             </p>
           </div>
         </motion.div>
