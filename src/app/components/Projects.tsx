@@ -59,7 +59,7 @@ export default function Projects() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-2">
-            {article.tags.map((tag, tagIndex) => (
+            {article.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full bg-secondary/50 border border-theme/30 text-xs text-secondary-foreground backdrop-blur-sm transition-all duration-200 hover:border-primary/50 hover:bg-secondary/70"

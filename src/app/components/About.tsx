@@ -60,7 +60,7 @@ export default function About() {
                 "APIs & intégrations propres", 
                 "CI/CD, Docker, déploiements",
                 "UI réactive & performante"
-              ].map((item, index) => (
+              ].map((item) => (
                 <div
                   key={item}
                   className="group relative rounded-xl border border-theme/50 bg-secondary/50 px-4 py-3 text-sm text-secondary-foreground transition-all duration-300 hover:border-primary/50 hover:bg-secondary/70 hover:scale-105 hover:-translate-y-1"

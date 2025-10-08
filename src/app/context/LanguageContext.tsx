@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import frTranslations from '../lib/translations/fr.json';
 import enTranslations from '../lib/translations/en.json';
 
-type Language = 'fr' | 'en';
+export type Language = 'fr' | 'en';
 
 interface LanguageContextType {
   language: Language;
@@ -37,11 +37,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     
     // Support des clés imbriquées comme "hero.title"
     const keys = key.split('.');
-    let value: any = translations;
+    let value: unknown = translations;
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
         return key; // Retourne la clé si la traduction n'existe pas
       }

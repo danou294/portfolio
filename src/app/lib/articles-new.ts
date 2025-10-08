@@ -1,3 +1,7 @@
+import { Language } from '../context/LanguageContext';
+import frTranslations from './translations/fr.json';
+import enTranslations from './translations/en.json';
+
 export interface Article {
   id: string;
   title: string;
@@ -16,10 +20,8 @@ export interface Article {
 }
 
 // Fonction pour obtenir les articles traduits
-export function getArticles(language: 'fr' | 'en' = 'fr'): Article[] {
-  const translations = language === 'fr' 
-    ? require('./translations/fr.json')
-    : require('./translations/en.json');
+export function getArticles(language: Language = 'fr'): Article[] {
+  const translations = language === 'fr' ? frTranslations : enTranslations;
 
   return [
     {
