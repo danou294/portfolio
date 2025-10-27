@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { SiAppstore } from "react-icons/si";
 import { getArticles } from "../../lib/articles-new";
 import { useLanguage } from "../../context/LanguageContext";
 import ThemeToggle from "../../components/ThemeToggle";
@@ -107,11 +108,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
                 aria-label="Télécharger sur l'App Store"
               >
-                <img 
-                  src="/images/appstore.svg"
-                  alt="App Store"
-                  className="w-4 h-4 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
-                />
+                <SiAppstore className="w-4 h-4 text-gray-900 dark:text-white" />
               </a>
             )}
           </div>
@@ -185,14 +182,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   }`}
                 >
                   {article.id === 'butter' ? (
-                    <>
-                      <img 
-                        src="/images/appstore.svg"
-                        alt="Download on the App Store"
-                        className="w-6 h-6 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
-                      />
-                      {t("article.tryNow")}
-                    </>
+                    <div className="flex items-center gap-3 group">
+                      <SiAppstore className="w-6 h-6 transition-all duration-300 group-hover:text-white text-cyan-500 dark:text-cyan-400" />
+                      <span>{t("article.tryNow")}</span>
+                    </div>
                   ) : (
                     <>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,11 +231,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   className="w-14 h-14 rounded-2xl bg-white dark:bg-white border-2 border-gray-900 dark:border-gray-300 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-gray-900/25"
                   aria-label="Télécharger sur l'App Store"
                 >
-                  <img 
-                    src="/images/appstore.svg"
-                    alt="App Store"
-                    className="w-8 h-8 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
-                  />
+                  <SiAppstore className="w-8 h-8 text-gray-900 dark:text-gray-300" />
                 </a>
               )}
               {article.socialLinks.linkedin && (

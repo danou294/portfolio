@@ -9,7 +9,8 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-start">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
@@ -48,7 +49,8 @@ export default function About() {
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.1 }} 
           className="space-y-6"
         >
