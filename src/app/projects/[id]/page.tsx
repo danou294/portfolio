@@ -110,7 +110,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 <img 
                   src="/images/appstore.svg"
                   alt="App Store"
-                  className="w-4 h-4 brightness-0 dark:brightness-0 dark:invert"
+                  className="w-4 h-4 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
                 />
               </a>
             )}
@@ -189,7 +189,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                       <img 
                         src="/images/appstore.svg"
                         alt="Download on the App Store"
-                        className="w-6 h-6 brightness-0 dark:brightness-0 dark:invert"
+                        className="w-6 h-6 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
                       />
                       {t("article.tryNow")}
                     </>
@@ -241,7 +241,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   <img 
                     src="/images/appstore.svg"
                     alt="App Store"
-                    className="w-8 h-8 brightness-0 dark:brightness-0 dark:invert"
+                    className="w-8 h-8 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)]"
                   />
                 </a>
               )}
