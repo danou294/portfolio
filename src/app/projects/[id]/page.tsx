@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { SiAppstore } from "react-icons/si";
 import { getArticles } from "../../lib/articles-new";
 import { useLanguage } from "../../context/LanguageContext";
@@ -100,15 +101,28 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 </svg>
               </a>
             )}
-            {article.liveLink && (
+            {article.liveLink && article.id === 'butter' && (
               <a
                 href={article.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
-                aria-label="Télécharger sur l'App Store"
+                aria-label={language === 'fr' ? "Obtenir sur l'App Store" : "Get on the App Store"}
               >
                 <SiAppstore className="w-4 h-4 text-gray-900 dark:text-white" />
+              </a>
+            )}
+            {article.liveLink && article.id !== 'butter' && (
+              <a
+                href={article.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
+                aria-label={t("article.tryNow")}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             )}
           </div>
@@ -130,7 +144,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src={article.image} alt={article.title} className="w-24 h-24 object-contain" />
+              <Image src={article.image} alt={article.title} width={96} height={96} className="object-contain" />
             </motion.div>
 
             {/* Title */}
@@ -184,7 +198,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   {article.id === 'butter' ? (
                     <>
                       <SiAppstore className="w-6 h-6 text-cyan-500 dark:text-cyan-400 group-hover:text-white transition-colors duration-300" />
-                      {t("article.tryNow")}
+                      {t("article.getOnAppStore")}
                     </>
                   ) : (
                     <>
@@ -229,7 +243,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 rounded-2xl bg-white dark:bg-white border-2 border-gray-900 dark:border-gray-300 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-gray-900/25"
-                  aria-label="Télécharger sur l'App Store"
+                  aria-label={language === 'fr' ? "Obtenir sur l'App Store" : "Get on the App Store"}
                 >
                   <SiAppstore className="w-8 h-8 text-gray-900 dark:text-gray-300" />
                 </a>

@@ -36,7 +36,7 @@ CodeSphere est né de cette idée simple : coder devrait être aussi rapide que 
 
 "Je veux que coder soit aussi simple que d'ouvrir une page web."
 
-CodeSphere veut rendre le développement web plus simple, rapide et mobile.
+CodeSphere veut rendre le développement web plus simple, rapide et accessible.
 L'idée est d'offrir une plateforme où le code est accessible de partout, hébergé directement en ligne, sans dépendre d'un ordinateur ou d'une configuration locale.
 C'est un outil pensé à la fois pour les étudiants débutants, et à terme pour les développeurs confirmés cherchant à travailler efficacement depuis le web.
 

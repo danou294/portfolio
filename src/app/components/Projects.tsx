@@ -1,154 +1,185 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { getArticles, Article } from "../lib/articles-new";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { ArrowRight, Code, Smartphone } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { getArticles } from "../lib/articles-new";
+
+const projects = [
+  {
+    id: 'codesphere',
+    image: '/images/codesphere.svg',
+    tags: ['React', 'Node.js', 'MongoDB', 'Docker', 'AWS'],
+    color: 'from-blue-500 to-cyan-500',
+    type: 'web'
+  },
+  {
+    id: 'butter',
+    image: '/images/butter.png',
+    tags: ['Flutter', 'Firebase', 'Firestore', 'Node.js'],
+    color: 'from-violet-500 to-purple-500',
+    type: 'mobile'
+  }
+];
 
 export default function Projects() {
   const { t, language } = useLanguage();
-  const [isLoading, setIsLoading] = useState(true);
-  
-  // Obtenir les articles traduits
   const articles = getArticles(language);
-  
-  // Simuler un chargement
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const ProjectCard = ({ article, index }: { article: Article; index: number }) => {
-    return (
-      <motion.a
-        key={article.id}
-        href={`/projects/${article.id}`}
-        className="group relative rounded-3xl bg-card/40 backdrop-blur-sm border border-theme/30 p-8 cursor-pointer overflow-hidden transition-all duration-300 hover:bg-card/60 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: index * 0.15,
-          duration: 0.8,
-          ease: "easeOut",
-        }}
-        whileHover={{ 
-          y: -8,
-          transition: { duration: 0.2, ease: "easeOut" }
-        }}
-      >
-        {/* Gradient overlay au hover */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
-        {/* Contenu de la carte */}
-        <div className="relative z-10 space-y-6">
-          <div className="w-20 h-20 mx-auto flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-transform duration-300 group-hover:scale-105">
-            <img 
-              src={article.image} 
-              alt={article.title} 
-              className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-110" 
-            />
-          </div>
-
-          <div className="text-center space-y-3">
-            <h3 className="text-2xl font-bold text-card-foreground transition-colors duration-300 group-hover:text-primary">
-              {article.title}
-            </h3>
-            
-            <p className="text-secondary-foreground text-sm leading-relaxed">
-              {article.description}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-2">
-            {article.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 rounded-full bg-secondary/50 border border-theme/30 text-xs text-secondary-foreground backdrop-blur-sm transition-all duration-200 hover:border-primary/50 hover:bg-secondary/70"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="text-center pt-2">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-primary text-theme font-semibold transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/25">
-              {t("projects.discover")}
-              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </motion.a>
-    );
-  };
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-br from-background via-secondary/20 to-background text-secondary-foreground relative overflow-hidden transition-colors duration-300">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-gradient-to-tr from-accent/8 to-primary/8 blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      </div>
+    <section id="projects" className="relative py-24 overflow-hidden bg-white dark:bg-gray-900">
+      {/* Diagonal Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-violet-500/5 dark:from-blue-500/10 dark:via-transparent dark:to-violet-500/10" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-theme">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {t("projects.title")}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6"></div>
-          <p className="text-xl text-secondary-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg">
             {t("projects.subtitle")}
           </p>
         </motion.div>
 
-        {isLoading ? (
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="rounded-3xl bg-card/40 border border-theme/30 p-8 h-80 animate-pulse"></div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {articles.map((article, index) => (
-              <ProjectCard key={article.id} article={article} index={index} />
-            ))}
-          </div>
-        )}
+        {/* Projects Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {projects.map((project, index) => {
+            const article = articles.find(a => a.id === project.id);
+            if (!article) return null;
 
+            return (
+              <motion.a
+                key={project.id}
+                href={`/projects/${project.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ y: -5 }}
+                className="group block"
+              >
+                <div className="h-full p-8 rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform p-3`}>
+                      <Image 
+                        src={project.image} 
+                        alt={article.title} 
+                        width={40} 
+                        height={40} 
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-gray-900 dark:text-white mb-2 flex items-center gap-2 text-xl font-bold">
+                        {article.title}
+                        {project.type === 'mobile' ? (
+                          <Smartphone className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        ) : (
+                          <Code className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        )}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {article.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {article.tags.map(tag => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 group-hover:translate-x-1 transition-all"
+                  >
+                    {t("projects.discover")}
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+              </motion.a>
+            );
+          })}
+        </div>
+
+        {/* Butter App Showcase - iPhone Mockups */}
         <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative"
         >
-        
+          <div className="p-12 rounded-3xl bg-gradient-to-br from-violet-500/10 via-purple-500/10 to-blue-500/10 dark:from-violet-500/20 dark:via-purple-500/20 dark:to-blue-500/20 border border-violet-500/20 dark:border-violet-500/30 overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/20 dark:bg-violet-500/30 rounded-full blur-3xl" />
+              <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/20 dark:bg-blue-500/30 rounded-full blur-3xl" />
+            </div>
+            <div className="relative text-center mb-8">
+              <Badge className="mb-4 bg-violet-500/20 dark:bg-violet-500/30 text-violet-700 dark:text-violet-300 border-violet-500/30 dark:border-violet-500/40">
+                Butter App
+              </Badge>
+              <h3 className="text-gray-900 dark:text-white mb-3 text-2xl font-bold">
+                Application mobile complète
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Interface moderne, expérience utilisateur optimisée et architecture cloud scalable
+              </p>
+            </div>
+            {/* iPhone Mockups Pyramid */}
+            <div className="relative flex items-end justify-center gap-4 h-96">
+              {[
+                { mockup: "6.png", height: "h-80", zIndex: 2 },
+                { mockup: "5.png", height: "h-96", zIndex: 3 },
+                { mockup: "3.png", height: "h-80", zIndex: 2 }
+              ].map((item, index) => (
+                <motion.div
+                  key={item.mockup}
+                  initial={{ opacity: 0, y: 50, rotateY: -20 }}
+                  whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.6 + index * 0.15,
+                    type: "spring"
+                  }}
+                  whileHover={{ 
+                    y: -10, 
+                    scale: 1.05,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="relative"
+                  style={{
+                    zIndex: item.zIndex
+                  }}
+                >
+                  <div className={`w-48 ${item.height} relative`}>
+                    <Image
+                      src={`/Assets/Mockups/${item.mockup}`}
+                      alt={`Butter App Mockup ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,213 +1,179 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Badge } from "./ui/badge";
+import { Progress } from "./ui/progress";
+import { Database, Code, Server, Smartphone } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+
+const skills = [
+  'Node.js',
+  'React',
+  'Next.js',
+  'Flutter',
+  'MongoDB',
+  'Firestore',
+  'Docker',
+  'AWS',
+  'REST API',
+  'TypeScript',
+  'Tailwind CSS',
+  'CI/CD'
+];
+
+const domains = [
+  {
+    icon: <Database className="w-6 h-6" />,
+    titleKey: "skills.sections.architecture.title",
+    descriptionKey: "skills.sections.architecture.description",
+    color: 'from-blue-500 to-cyan-500'
+  },
+  {
+    icon: <Code className="w-6 h-6" />,
+    titleKey: "skills.sections.apis.title",
+    descriptionKey: "skills.sections.apis.description",
+    color: 'from-violet-500 to-purple-500'
+  },
+  {
+    icon: <Server className="w-6 h-6" />,
+    titleKey: "skills.sections.devops.title",
+    descriptionKey: "skills.sections.devops.description",
+    color: 'from-pink-500 to-rose-500'
+  },
+  {
+    icon: <Smartphone className="w-6 h-6" />,
+    titleKey: "skills.sections.ui.title",
+    descriptionKey: "skills.sections.ui.description",
+    color: 'from-cyan-500 to-teal-500'
+  }
+];
 
 export default function Skills() {
   const { t } = useLanguage();
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  
-  const skills = [
-    "Node.js", "TypeScript", "React / Next.js", "Flutter", "MongoDB",
-    "Firestore", "Docker", "AWS", "REST API", "Automatisation data"
-  ];
-
-  // Positions fixes pour éviter les erreurs d'hydratation
-  const particlePositions = [
-    { left: "5%", top: "20%" },
-    { left: "25%", top: "40%" },
-    { left: "45%", top: "15%" },
-    { left: "65%", top: "60%" },
-    { left: "85%", top: "30%" },
-    { left: "15%", top: "80%" },
-    { left: "35%", top: "70%" },
-    { left: "55%", top: "85%" },
-    { left: "75%", top: "10%" },
-    { left: "95%", top: "50%" },
-    { left: "10%", top: "90%" },
-    { left: "30%", top: "25%" },
-    { left: "50%", top: "55%" },
-    { left: "70%", top: "45%" },
-    { left: "90%", top: "75%" }
-  ];
-
-  const skillVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.8 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-    hover: { 
-      scale: 1.15, 
-      y: -5, 
-      rotateZ: 2
-    }
-  };
 
   return (
-    <section id="skills" className="bg-theme text-theme border-t border-theme relative overflow-hidden transition-colors duration-300">
-      {/* Particules de fond animées */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        {particlePositions.map((pos, i) => (
+    <section id="skills" className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-950">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-violet-500/10 dark:bg-violet-500/20 rounded-full blur-3xl" />
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary/40 rounded-full"
-            style={{
-              left: pos.left,
-              top: pos.top,
-            }}
+            className="absolute w-2 h-2 bg-gradient-to-br from-blue-400 to-violet-400 rounded-full"
             animate={{
-              y: [0, -50, 0],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              opacity: [0.2, 0.6, 0.2],
+              scale: [1, 1.2, 1]
             }}
             transition={{
-              duration: 2 + (i * 0.2),
+              duration: 3 + Math.random() * 2,
               repeat: Infinity,
-              delay: i * 0.3,
+              ease: "easeInOut",
+              delay: Math.random() * 2
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
             }}
           />
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-        <motion.h2 
-          className="text-2xl md:text-3xl font-bold text-theme text-center mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {t("skills.title")}
-        </motion.h2>
-        
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          {skills.map((skill, i) => (
-            <motion.div
-              key={skill}
-              className="relative"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={skillVariants}
-              transition={{ 
-                delay: i * 0.08, 
-                duration: 0.5,
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover="hover"
-              onHoverStart={() => setHoveredSkill(skill)}
-              onHoverEnd={() => setHoveredSkill(null)}
-            >
-              <motion.span
-                className="inline-block rounded-full bg-secondary border border-theme px-4 py-2 text-sm cursor-pointer relative overflow-hidden transition-colors duration-300"
-              >
-                <span className="relative z-10 text-secondary-foreground">
-                  {skill}
-                </span>
-                
-                {/* Effet de brillance au survol - UNIQUEMENT sur le tag ovale */}
-                {hoveredSkill === skill && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent rounded-full"
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
-                )}
-              </motion.span>
-              
-              {/* Particules qui apparaissent au survol */}
-              {hoveredSkill === skill && (
-                <>
-                  {[...Array(6)].map((_, j) => (
-                    <motion.div
-                      key={j}
-                      className="absolute w-1 h-1 bg-primary rounded-full"
-                      initial={{ 
-                        x: 0, 
-                        y: 0, 
-                        opacity: 1, 
-                        scale: 0 
-                      }}
-                      animate={{ 
-                        x: (j - 2.5) * 20, 
-                        y: (j - 2.5) * 20, 
-                        opacity: 0, 
-                        scale: 1 
-                      }}
-                      transition={{ 
-                        duration: 1, 
-                        delay: j * 0.1 
-                      }}
-                    />
-                  ))}
-                </>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Barre de progression animée */}
-        <motion.div 
-          className="mt-12 max-w-2xl mx-auto"
+      <div className="relative max-w-7xl mx-auto px-6">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <div className="text-center mb-4">
-            <span className="text-sm text-muted-foreground">Niveau d&apos;expertise global</span>
-          </div>
-          <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeOut" }}
-            />
-          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            {t("skills.title")}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+            {t("skills.subtitle")}
+          </p>
         </motion.div>
 
-        {/* Section "Ce que je peux apporter" */}
+        {/* Skills Cloud */}
         <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto"
+        >
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + index * 0.05 }}
+              whileHover={{ scale: 1.1, y: -5 }}
+            >
+              <Badge 
+                className="px-5 py-2.5 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-all cursor-pointer shadow-sm"
+              >
+                {skill}
+              </Badge>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Expertise Level */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-2xl mx-auto mb-16 p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg"
         >
-          <h3 className="text-2xl font-bold text-theme mb-8 text-center">
-            {t("skills.subtitle")}
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              { key: 'architecture', title: t('skills.sections.architecture.title'), description: t('skills.sections.architecture.description') },
-              { key: 'apis', title: t('skills.sections.apis.title'), description: t('skills.sections.apis.description') },
-              { key: 'devops', title: t('skills.sections.devops.title'), description: t('skills.sections.devops.description') },
-              { key: 'ui', title: t('skills.sections.ui.title'), description: t('skills.sections.ui.description') }
-            ].map((section, index) => (
-              <motion.div
-                key={section.key}
-                className="p-6 rounded-2xl bg-card border border-theme/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <h4 className="text-lg font-semibold text-card-foreground mb-3">
-                  {section.title}
-                </h4>
-                <p className="text-secondary-foreground text-sm leading-relaxed">
-                  {section.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-gray-700 dark:text-gray-300 font-medium">
+              Niveau d&apos;expertise global
+            </span>
+            <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent font-bold">
+              85%
+            </span>
           </div>
+          <Progress value={85} className="h-3" />
         </motion.div>
+
+        {/* Domain Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {domains.map((domain, index) => (
+            <motion.div
+              key={domain.titleKey}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all group"
+            >
+              <div className="flex items-start gap-4">
+                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${domain.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                  {domain.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-gray-900 dark:text-white mb-2 font-semibold text-lg">
+                    {t(domain.titleKey)}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {t(domain.descriptionKey)}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-  
