@@ -63,7 +63,7 @@ export default function CodeSphereEnPage() {
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="https://codesphere.fr" target="_blank" rel="noopener noreferrer" className="hover:text-[#5AB1FF] transition-colors">Documentation</a>
               <a href="https://github.com/danou294/codesphere" target="_blank" rel="noopener noreferrer" className="hover:text-[#5AB1FF] transition-colors">GitHub</a>
-              <a href="/#contact" className="hover:text-[#5AB1FF] transition-colors">Contact</a>
+              <Link href="/#contact" className="hover:text-[#5AB1FF] transition-colors">Contact</Link>
             </div>
           </div>
           <div className="mt-8 text-center text-sm text-gray-600">

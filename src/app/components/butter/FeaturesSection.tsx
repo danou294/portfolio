@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Filter, Image as ImageIcon, MapPin, Heart, FileText, Navigation } from "lucide-react";
+import { Filter, Image as ImageIcon, Heart, FileText, Navigation } from "lucide-react";
 
 export function FeaturesSection() {
   const ref = useRef(null);

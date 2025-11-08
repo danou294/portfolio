@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Sparkles, Github } from "lucide-react";
+import { Sparkles, Github } from "lucide-react";
 
 export function CTASection() {
   return (

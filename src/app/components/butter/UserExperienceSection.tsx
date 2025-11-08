@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { Sliders, Grid3x3, FileText, Heart } from "lucide-react";
+import { Sliders, Grid3x3, FileText } from "lucide-react";
 
 export function UserExperienceSection() {
   const ref = useRef(null);

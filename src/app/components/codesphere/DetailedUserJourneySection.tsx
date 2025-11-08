@@ -13,8 +13,6 @@ import {
   Lightbulb,
   Zap,
   Bot,
-  ArrowRight,
-  Rocket
 } from "lucide-react";
 import { Button } from "../ui/button";
 
@@ -88,7 +86,7 @@ export function DetailedUserJourneySection() {
         <Tabs value={activeStep} onValueChange={setActiveStep} className="w-full">
           {/* Navigation */}
           <TabsList className="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-transparent h-auto mb-12">
-            {journeySteps.map((step, index) => (
+            {journeySteps.map((step) => (
               <TabsTrigger
                 key={step.id}
                 value={step.id}
@@ -260,7 +258,7 @@ function AICodeAssistDemo() {
             <div className="text-purple-400">import <span className="text-blue-300">{'{ useState }'}</span> from &apos;react&apos;;</div>
             <div className="h-4"></div>
             <div className="text-purple-400">function <span className="text-yellow-300">Counter</span>() {'{'}</div>
-            <div className="pl-4 text-gray-400">// Je veux un compteur avec des boutons +/-</div>
+            <div className="pl-4 text-gray-400">{'// Je veux un compteur avec des boutons +/-'}</div>
             <div className="pl-4 text-gray-600">|</div>
             
             <AnimatePresence>
