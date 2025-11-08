@@ -10,7 +10,7 @@ import { getArticles } from "../lib/articles-new";
 const projects = [
   {
     id: 'codesphere',
-    image: '/images/codesphere.svg',
+    image: '/images/codesphere.png',
     tags: ['React', 'Node.js', 'MongoDB', 'Docker', 'AWS'],
     color: 'from-blue-500 to-cyan-500',
     type: 'web'
@@ -55,11 +55,17 @@ export default function Projects() {
             const article = articles.find(a => a.id === project.id);
             if (!article) return null;
 
-            return (
-              <motion.a
+            const projectUrl = project.id === 'butter' 
+              ? (language === 'fr' ? '/projects/butter-fr' : '/projects/butter-en')
+              : project.id === 'codesphere'
+              ? (language === 'fr' ? '/projects/codesphere-fr' : '/projects/codesphere-en')
+              : `/projects/${project.id}`;
+
+    return (
+      <motion.a
                 key={project.id}
-                href={`/projects/${project.id}`}
-                initial={{ opacity: 0, y: 20 }}
+                href={projectUrl}
+        initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -69,13 +75,14 @@ export default function Projects() {
                 <div className="h-full p-8 rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all">
                   <div className="flex items-start gap-4 mb-6">
                     <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform p-3`}>
-                      <Image 
-                        src={project.image} 
+            <Image 
+              src={project.image} 
                         alt={article.title} 
                         width={40} 
                         height={40} 
                         className="object-contain"
-                      />
+                        unoptimized
+            />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-gray-900 dark:text-white mb-2 flex items-center gap-2 text-xl font-bold">
@@ -85,23 +92,23 @@ export default function Projects() {
                         ) : (
                           <Code className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                         )}
-                      </h3>
+            </h3>
                       <p className="text-gray-600 dark:text-gray-400">
                         {article.description}
-                      </p>
-                    </div>
+            </p>
+          </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {article.tags.map(tag => (
                       <Badge
-                        key={tag}
+                key={tag}
                         variant="secondary"
                         className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
-                      >
-                        {tag}
+              >
+                {tag}
                       </Badge>
-                    ))}
-                  </div>
+            ))}
+          </div>
                   <Button
                     variant="outline"
                     className="w-full border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 group-hover:translate-x-1 transition-all"
@@ -109,9 +116,9 @@ export default function Projects() {
                     {t("projects.discover")}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
-                </div>
-              </motion.a>
-            );
+        </div>
+      </motion.a>
+    );
           })}
         </div>
 
@@ -152,7 +159,7 @@ export default function Projects() {
                   initial={{ opacity: 0, y: 50, rotateY: -20 }}
                   whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
+          transition={{
                     duration: 0.8, 
                     delay: 0.6 + index * 0.15,
                     type: "spring"
@@ -174,11 +181,11 @@ export default function Projects() {
                       fill
                       className="object-contain"
                       unoptimized
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+        />
+      </div>
+        </motion.div>
+            ))}
+          </div>
           </div>
         </motion.div>
       </div>

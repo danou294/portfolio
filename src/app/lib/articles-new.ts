@@ -28,7 +28,7 @@ export function getArticles(language: Language = 'fr'): Article[] {
       id: 'codesphere',
       title: translations.projects.articles.codesphere.title,
       description: translations.projects.articles.codesphere.subtitle,
-      image: '/images/codesphere.svg',
+      image: '/images/codesphere.png',
       tags: translations.projects.articles.codesphere.tags,
       color: 'from-purple-500 to-blue-500',
       content: translations.projects.articles.codesphere.content,

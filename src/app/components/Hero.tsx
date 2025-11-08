@@ -11,7 +11,7 @@ const technologies = [
 ];
 
 const projectCards = [
-  { name: 'CodeSphere', color: 'from-blue-500 to-cyan-500', image: '/images/codesphere.svg' },
+  { name: 'CodeSphere', color: 'from-blue-500 to-cyan-500', image: '/images/codesphere.png' },
   { name: 'Butter', color: 'from-violet-500 to-purple-500', image: '/images/butter.png' }
 ];
 
@@ -136,11 +136,12 @@ export default function Hero() {
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center p-2">
                         <Image 
-                          src={project.image} 
+                          src={project.image}
                           alt={project.name} 
                           width={32} 
                           height={32} 
                           className="object-contain"
+                          unoptimized
                         />
                       </div>
                       <span className="text-white font-semibold">{project.name}</span>
@@ -169,11 +170,12 @@ export default function Hero() {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center p-2">
                       <Image 
-                        src={project.image} 
+                        src={project.image}
                         alt={project.name} 
                         width={28} 
                         height={28} 
                         className="object-contain"
+                        unoptimized
                       />
                     </div>
                     <span className="text-white font-semibold">{project.name}</span>

@@ -20,7 +20,7 @@ export const articles: Article[] = [
     id: "codesphere",
     title: "CodeSphere",
     description: "IDE web nouvelle génération pour développer directement dans le navigateur",
-    image: "/images/codesphere.svg",
+    image: "/images/codesphere.png",
     tags: ["React", "TypeScript", "Monaco Editor", "Django", "Firebase", "OpenAI"],
     color: "#06b6d4",
     githubLink: "https://github.com/danou294/codesphere",
