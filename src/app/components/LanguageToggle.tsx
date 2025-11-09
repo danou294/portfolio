@@ -2,12 +2,23 @@
 
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'fr' ? 'en' : 'fr');
+    const newLanguage = language === 'fr' ? 'en' : 'fr';
+    setLanguage(newLanguage);
+    
+    // Rediriger vers la bonne page selon le projet
+    if (pathname.includes('/projects/butter-')) {
+      router.push(`/projects/butter-${newLanguage}`);
+    } else if (pathname.includes('/projects/codesphere-')) {
+      router.push(`/projects/codesphere-${newLanguage}`);
+    }
   };
 
   return (

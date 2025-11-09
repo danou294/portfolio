@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { HeroSection } from "../../components/butter/HeroSection";
 import { ProblemSection } from "../../components/butter/ProblemSection";
@@ -11,8 +11,14 @@ import { UserExperienceSection } from "../../components/butter/UserExperienceSec
 import { CTASection } from "../../components/butter/CTASection";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageToggle from "../../components/LanguageToggle";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ButterEnPage() {
+  const { setLanguage, t } = useLanguage();
+  
+  useEffect(() => {
+    setLanguage('en');
+  }, [setLanguage]);
   return (
     <div className="bg-white dark:bg-[#0A0A0E] min-h-screen text-gray-900 dark:text-white overflow-x-hidden">
       {/* Header */}
@@ -22,8 +28,8 @@ export default function ButterEnPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span className="hidden sm:inline">Back to projects</span>
-            <span className="sm:hidden">Back</span>
+            <span className="hidden sm:inline">{t("article.backToProjects")}</span>
+            <span className="sm:hidden">{t("article.backToProjects")}</span>
           </Link>
           
           <div className="flex items-center gap-2 sm:gap-3">

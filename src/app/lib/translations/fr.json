@@ -33,7 +33,7 @@
   },
   "about": {
     "title": "À propos",
-    "subtitle": "Développeur Fullstack & Mobile. J'aime concevoir des produits de bout en bout : modélisation NoSQL, intégration d'API, interfaces modernes, et mise en production (Docker, AWS).",
+    "subtitle": "Développeur Fullstack & Mobile. Conception de produits de bout en bout : modélisation NoSQL, intégration d'API, interfaces modernes, et mise en production (Docker, AWS).",
     "approach": {
       "title": "💡 Approche",
       "text": "Je privilégie une approche agile et centrée utilisateur, avec un focus sur la performance et la maintenabilité du code."
@@ -59,7 +59,7 @@
     "subtitle": "Ce que je peux apporter",
     "sections": {
       "architecture": {
-        "title": "Architecture & modèles NoSQL",
+        "title": "Architecture & modélisation",
         "description": "Conception de bases de données et architecture scalable"
       },
       "apis": {
@@ -128,5 +128,224 @@
       "followLinkedIn": "Suivre sur LinkedIn",
       "developmentNotice": "Application en cours de développement - Les liens seront disponibles prochainement",
       "followProject": "Suivez le projet"
+  },
+  "butter": {
+    "hero": {
+      "title": "Butter",
+      "subtitle": "L'app mobile qui trouve les bons restos à ta place",
+      "description": "Une application mobile Flutter pour découvrir les meilleurs restaurants. Une app qui centralise les meilleures adresses, dans une interface moderne, fiable et intuitive.",
+      "stats": "Développée avec Flutter & Firebase — Base de données exclusive avec sélection manuelle des restaurants \"validés Butter\""
+    },
+    "problem": {
+      "badge": "Le Problème",
+      "title": "Un soir à Paris, deux amies cherchaient un restaurant depuis deux applis différentes — vingt-cinq minutes plus tard, elles mangeaient des pâtes.",
+      "description": "Ce jour-là, on s'est dit : \"pourquoi il n'existe pas une appli où il n'y a que des bons restos ?\" C'est comme ça qu'est née Butter — une app qui centralise les meilleures adresses, dans une interface moderne, fiable et intuitive.",
+      "quote": "\"Trop d'infos, pas toujours fiables, et pas toutes au même endroit — Butter rassemble tout ce qu'il faut, et seulement ce qu'il faut.\""
+    },
+    "vision": {
+      "title": "Une app fiable, simple et agréable à utiliser",
+      "description": "Butter veut devenir le réflexe de recherche quand on sort dîner. Une app de confiance, qui combine la simplicité d'un feed social à la fiabilité d'un guide sélectif. L'objectif : que la sortie au restaurant soit agréable du début à la fin, en commençant par une recherche fluide, claire et efficace.",
+      "features": {
+        "filters": {
+          "title": "Filtres personnalisés",
+          "description": "Quartier, cuisine, prix — des filtres clairs pour trouver exactement ce que vous cherchez"
+        },
+        "feed": {
+          "title": "Feed visuel",
+          "description": "Interface de type feed avec photos, menus et ambiance pour une découverte immersive"
+        },
+        "navigation": {
+          "title": "Navigation intégrée",
+          "description": "Ouverture directe dans Plans / Waze et fiches détaillées avec lien de réservation"
+        }
+      }
+    },
+    "userExperience": {
+      "badge": "Expérience Utilisateur",
+      "title": "Un parcours fluide et intuitif",
+      "steps": {
+        "filters": {
+          "title": "Choisir ses filtres",
+          "description": "Ex. 8e arrondissement, italien, €€ — des filtres clairs pour affiner la recherche"
+        },
+        "feed": {
+          "title": "Il parcourt un feed de restaurants illustré",
+          "description": "Photos, menus et avis — une navigation immersive et visuelle"
+        },
+        "details": {
+          "title": "Un clic ouvre une fiche complète",
+          "description": "Menu, localisation, lien de réservation, ou navigation via Waze / Plans"
+        },
+        "accessibility": {
+          "title": "Accessibilité directe au restaurant",
+          "description": "Lien direct avec Plans et Waze depuis l'app — navigation fluide et sans friction vers le restaurant"
+        }
+      }
+    },
+    "features": {
+      "badge": "Fonctionnalités principales",
+      "title": "Une expérience complète et soignée",
+      "description": "Aucune IA ici, juste de la curation humaine et de la qualité manuelle — pour garantir que tout ce qui est affiché est réellement bon.",
+      "items": {
+        "feed": {
+          "title": "Interface de type feed",
+          "description": "Photos, menus, ambiance — une navigation immersive et visuelle"
+        },
+        "filters": {
+          "title": "Filtres personnalisés",
+          "description": "Quartier, cuisine, prix — des filtres clairs pour affiner la recherche"
+        },
+        "details": {
+          "title": "Fiches restaurants détaillées",
+          "description": "Menu, localisation, lien de réservation — toutes les infos essentielles"
+        },
+        "favorites": {
+          "title": "Sauvegarde d'adresses favorites",
+          "description": "Liste personnalisée pour retrouver facilement vos meilleures adresses"
+        },
+        "navigation": {
+          "title": "Intégration navigation",
+          "description": "Ouverture directe dans Plans / Waze pour un trajet sans friction"
+        },
+        "database": {
+          "title": "Base de données exclusive",
+          "description": "Sélection manuelle des restaurants \"validés Butter\" — curation humaine garantie"
+        }
+      }
+    },
+    "techStack": {
+      "badge": "Stack Technique",
+      "title": "Technologies & Outils",
+      "description1": "Butter a été développée entièrement en",
+      "description2": "pour permettre un design élégant, performant et compatible iOS/Android. La gestion",
+      "description3": "simplifie la sauvegarde des données utilisateurs, tandis que l'intégration",
+      "description4": "rend l'expérience géolocalisée et fluide.",
+      "description5": "La partie la plus complexe a été la gestion du déploiement",
+      "description6": "avec la configuration des certificats, profils de provisioning et sandbox pour la publication sur l'App Store. Une étape longue et exigeante, mais formatrice sur tout le processus de publication mobile professionnel."
+    },
+    "cta": {
+      "title": "Et si vous pensez encore que Butter, c'est du beurre, c'est que vous ne l'avez pas encore téléchargée.",
+      "download": "Télécharger sur l'App Store",
+      "viewSource": "Voir le code source",
+      "signature": "Développé par",
+      "tech": "Flutter & Firebase"
+    }
+  },
+  "codesphere": {
+    "hero": {
+      "title": "🚀 CodeSphere —",
+      "subtitle": "L'IDE web nouvelle génération.",
+      "description": "Coder, tester et déployer directement depuis ton navigateur.",
+      "tags": ["SaaS", "IDE", "Fullstack", "React", "TypeScript"]
+    },
+    "userJourney": {
+      "title": "Le parcours",
+      "subtitle": "utilisateur complet",
+      "description": "De la création du projet à la génération de code avec l'IA",
+      "steps": {
+        "create": {
+          "title": "Créer un projet",
+          "description": "Un formulaire simple et intuitif. En quelques secondes, ton environnement de développement est prêt."
+        },
+        "manage": {
+          "title": "Gérer ses projets",
+          "description": "Un gestionnaire orienté UI, très visuel. Organise et retrouve tous tes projets au même endroit, sans installation."
+        },
+        "code": {
+          "title": "Coder en direct",
+          "description": "Déjà dans l'IDE, en train de coder. Un éditeur moderne, rapide et fluide avec aperçu en temps réel."
+        },
+        "ai": {
+          "title": "Assistance IA Premium",
+          "description": "Une IA basée sur OpenAI t'accompagne dans ton code. Interface visuelle orientée ChatGPT, intégrée directement dans l'IDE."
+        }
+      }
+    },
+    "uniqueFeatures": {
+      "title": "Ce qui le rend",
+      "subtitle": "unique",
+      "features": {
+        "allInOne": {
+          "title": "Tout-en-un",
+          "description": "Éditeur, terminal, base de données et déploiement intégrés."
+        },
+        "instant": {
+          "title": "Instantané",
+          "description": "Démarre ton projet sans setup ni dépendance."
+        },
+        "ai": {
+          "title": "Intelligence intégrée",
+          "description": "L'assistant IA comprend ton code et t'aide à le perfectionner."
+        }
+      }
+    },
+    "humanContext": {
+      "text": "CodeSphere est né d'une idée simple :",
+      "highlight": "coder devrait être aussi rapide que l'inspiration.",
+      "quote": "\"Construis quelque chose que les gens veulent.\"",
+      "author": "— Paul Graham (Y Combinator)"
+    },
+    "futureFeatures": {
+      "badge": "Roadmap",
+      "title": "CodeSphere",
+      "subtitle": "évolue",
+      "description": "Des fonctionnalités puissantes en développement pour rendre ton workflow encore plus fluide",
+      "features": {
+        "git": {
+          "title": "Intégration Git",
+          "description": "Connecte ton projet à GitHub, GitLab ou Bitbucket. Push, pull et merge directement depuis l'IDE.",
+          "status": "À venir"
+        },
+        "vercel": {
+          "title": "Déploiement Vercel",
+          "description": "Déploie ton projet sur Vercel en un clic. Intégration native avec les previews et les domaines personnalisés.",
+          "status": "À venir"
+        },
+        "templates": {
+          "title": "Templates prêts à l'emploi",
+          "description": "Démarre avec des templates React, Vue, Angular ou Next.js. Configuration automatique, zéro setup.",
+          "status": "En développement"
+        },
+        "collaboration": {
+          "title": "Collaboration en temps réel",
+          "description": "Code en équipe avec le partage de session en direct. Voir les modifications de tes coéquipiers en live.",
+          "status": "À venir"
+        }
+      },
+      "comingSoon": "Bientôt sur CodeSphere",
+      "templates": {
+        "title": "Démarre ton projet en quelques secondes avec un template configuré et prêt à coder",
+        "heading": "Templates",
+        "subheading": "prêts à l'emploi"
+      }
+    },
+    "joinAdventure": {
+      "title": "Rejoins",
+      "subtitle": "l'aventure",
+      "description": "Rejoins le projet en tant que développeur pour aider à améliorer CodeSphere. Contribue au code, propose des features et façonne l'avenir du développement web.",
+      "benefits": {
+        "contribute": {
+          "title": "Contribue au code",
+          "description": "Participe au développement et améliore le projet"
+        },
+        "community": {
+          "title": "Rejoins la communauté",
+          "description": "Collabore avec d'autres développeurs passionnés sur le projet"
+        },
+        "impact": {
+          "title": "Impact direct",
+          "description": "Tes contributions façonnent directement l'avenir de CodeSphere"
+        }
+      },
+      "cta": "Rejoins la communauté"
+    },
+    "finalCta": {
+      "title": "Un espace pour",
+      "subtitle": "construire, tester et apprendre",
+      "suffix": "— sans perdre une seconde",
+      "description": "Pensé pour les développeurs qui veulent créer, pas configurer.",
+      "signature": "Développé par",
+      "tech": "React, Django, Docker & OpenAI API"
+    }
   }
 }

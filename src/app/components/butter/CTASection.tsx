@@ -5,10 +5,12 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { Apple, Github } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function CTASection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   return (
     <section ref={ref} className="relative py-32 overflow-hidden bg-white dark:bg-[#0A0A0E]">
@@ -57,7 +59,7 @@ export function CTASection() {
           {/* Title */}
           <div className="space-y-6">
             <h2 className="text-5xl lg:text-6xl text-gray-900 dark:text-white/90 font-bold">
-              Et si vous pensez encore que Butter, c&apos;est du beurre, c&apos;est que vous ne l&apos;avez pas encore téléchargée.
+              {t("butter.cta.title")}
             </h2>
           </div>
           {/* CTAs */}
@@ -76,7 +78,7 @@ export function CTASection() {
               className="px-10 py-5 bg-gradient-to-r from-blue-500 to-violet-600 dark:from-[#5AB1FF] dark:to-[#B77BFF] rounded-full flex items-center justify-center gap-3 shadow-lg shadow-blue-500/30 dark:shadow-blue-500/30 hover:shadow-blue-500/50 dark:hover:shadow-blue-500/50 transition-shadow text-lg text-white font-semibold"
             >
               <Apple className="w-6 h-6" />
-              Télécharger sur l&apos;App Store
+              {t("butter.cta.download")}
             </motion.a>
             
             <motion.a
@@ -88,7 +90,7 @@ export function CTASection() {
               className="px-10 py-5 border-2 border-gray-300 dark:border-white/20 rounded-full flex items-center justify-center gap-3 backdrop-blur-sm hover:bg-gray-100 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white/40 transition-colors text-lg text-gray-900 dark:text-white font-semibold"
             >
               <Github className="w-6 h-6" />
-              Voir le code source
+              {t("butter.cta.viewSource")}
             </motion.a>
           </motion.div>
           {/* Signature */}
@@ -98,7 +100,7 @@ export function CTASection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gray-500 dark:text-white/40"
           >
-            Développé par <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Daniel Levy</span> — Flutter & Firebase
+            {t("butter.cta.signature")} <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Daniel Levy</span> — {t("butter.cta.tech")}
           </motion.p>
         </motion.div>
       </div>

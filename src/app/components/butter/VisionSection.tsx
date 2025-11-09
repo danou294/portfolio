@@ -4,29 +4,31 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Search, Image, MapPin } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function VisionSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const features = [
       {
         icon: Search,
         emoji: "🔍",
-        title: "Filtres personnalisés",
-        description: "Quartier, cuisine, prix — des filtres clairs pour trouver exactement ce que vous cherchez"
+        title: t("butter.vision.features.filters.title"),
+        description: t("butter.vision.features.filters.description")
       },
       {
         icon: Image,
         emoji: "🍝",
-        title: "Feed visuel",
-        description: "Interface de type feed avec photos, menus et ambiance pour une découverte immersive"
+        title: t("butter.vision.features.feed.title"),
+        description: t("butter.vision.features.feed.description")
       },
       {
         icon: MapPin,
         emoji: "📍",
-        title: "Navigation intégrée",
-        description: "Ouverture directe dans Plans / Waze et fiches détaillées avec lien de réservation"
+        title: t("butter.vision.features.navigation.title"),
+        description: t("butter.vision.features.navigation.description")
       }
   ];
 
@@ -45,10 +47,10 @@ export function VisionSection() {
           className="text-center max-w-4xl mx-auto mb-20 space-y-6"
         >
           <h2 className="text-5xl lg:text-6xl bg-gradient-to-r from-blue-500 to-violet-600 dark:from-[#5AB1FF] dark:to-[#B77BFF] bg-clip-text text-transparent font-bold">
-            Une app fiable, simple et agréable à utiliser
+            {t("butter.vision.title")}
           </h2>
           <p className="text-2xl text-gray-600 dark:text-white/60">
-            Butter veut devenir le réflexe de recherche quand on sort dîner. Une app de confiance, qui combine la simplicité d&apos;un feed social à la fiabilité d&apos;un guide sélectif. L&apos;objectif : que la sortie au restaurant soit agréable du début à la fin, en commençant par une recherche fluide, claire et efficace.
+            {t("butter.vision.description")}
           </p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8">

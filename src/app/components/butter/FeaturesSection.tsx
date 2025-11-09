@@ -4,46 +4,48 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Filter, Image as ImageIcon, Heart, FileText, Navigation } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function FeaturesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const features = [
     {
       icon: ImageIcon,
-      title: "Interface de type feed",
-      description: "Photos, menus, ambiance — une navigation immersive et visuelle",
+      title: t("butter.features.items.feed.title"),
+      description: t("butter.features.items.feed.description"),
       emoji: "📸"
     },
     {
       icon: Filter,
-      title: "Filtres personnalisés",
-      description: "Quartier, cuisine, prix — des filtres clairs pour affiner la recherche",
+      title: t("butter.features.items.filters.title"),
+      description: t("butter.features.items.filters.description"),
       emoji: "🎯"
     },
     {
       icon: FileText,
-      title: "Fiches restaurants détaillées",
-      description: "Menu, localisation, lien de réservation — toutes les infos essentielles",
+      title: t("butter.features.items.details.title"),
+      description: t("butter.features.items.details.description"),
       emoji: "📋"
     },
     {
       icon: Heart,
-      title: "Sauvegarde d'adresses favorites",
-      description: "Liste personnalisée pour retrouver facilement vos meilleures adresses",
+      title: t("butter.features.items.favorites.title"),
+      description: t("butter.features.items.favorites.description"),
       emoji: "💾"
     },
     {
       icon: Navigation,
-      title: "Intégration navigation",
-      description: "Ouverture directe dans Plans / Waze pour un trajet sans friction",
+      title: t("butter.features.items.navigation.title"),
+      description: t("butter.features.items.navigation.description"),
       emoji: "🗺️"
     },
     {
       icon: FileText,
-      title: "Base de données exclusive",
-      description: "Sélection manuelle des restaurants \"validés Butter\" — curation humaine garantie",
+      title: t("butter.features.items.database.title"),
+      description: t("butter.features.items.database.description"),
       emoji: "✨"
     }
   ];
@@ -64,13 +66,13 @@ export function FeaturesSection() {
           className="text-center mb-20"
         >
           <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-white/5 backdrop-blur-sm border border-blue-200 dark:border-white/10 rounded-full mb-6">
-            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">Fonctionnalités principales</span>
+            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">{t("butter.features.badge")}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900 dark:text-white/90 font-bold">
-            Une expérience complète et soignée
+            {t("butter.features.title")}
           </h2>
           <p className="text-xl text-gray-600 dark:text-white/60 max-w-3xl mx-auto">
-            Aucune IA ici, juste de la curation humaine et de la qualité manuelle — pour garantir que tout ce qui est affiché est réellement bon.
+            {t("butter.features.description")}
           </p>
         </motion.div>
 

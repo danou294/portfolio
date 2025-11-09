@@ -100,9 +100,6 @@ export default function About() {
               <Badge className="bg-blue-500/10 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/20 dark:border-blue-500/30">
                 5+ ans d&apos;expérience
               </Badge>
-              <Badge className="bg-violet-500/10 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 border-violet-500/20 dark:border-violet-500/30">
-                20+ projets livrés
-              </Badge>
               <Badge className="bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 border-cyan-500/20 dark:border-cyan-500/30">
                 {t("hero.available")}
               </Badge>

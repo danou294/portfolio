@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function ProblemSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   return (
     <section ref={ref} className="relative py-32 overflow-hidden bg-white dark:bg-[#0A0A0E]">
@@ -43,13 +45,13 @@ export function ProblemSection() {
           >
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-white/5 backdrop-blur-sm border border-blue-200 dark:border-white/10 rounded-full">
-                <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">Le Problème</span>
+                <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">{t("butter.problem.badge")}</span>
               </div>
               <p className="text-2xl lg:text-3xl text-gray-900 dark:text-white/80 leading-relaxed font-semibold">
-                Un soir à Paris, deux amies cherchaient un restaurant depuis deux applis différentes — vingt-cinq minutes plus tard, elles mangeaient des pâtes.
+                {t("butter.problem.title")}
               </p>
               <p className="text-xl text-gray-600 dark:text-white/60">
-                Ce jour-là, on s&apos;est dit : &quot;pourquoi il n&apos;existe pas une appli où il n&apos;y a que des bons restos ?&quot; C&apos;est comme ça qu&apos;est née Butter — une app qui centralise les meilleures adresses, dans une interface moderne, fiable et intuitive.
+                {t("butter.problem.description")}
               </p>
             </div>
             {/* Quote card */}
@@ -64,7 +66,7 @@ export function ProblemSection() {
               </div>
               
               <p className="text-xl text-gray-800 dark:text-white/90 italic">
-                &quot;Trop d&apos;infos, pas toujours fiables, et pas toutes au même endroit — Butter rassemble tout ce qu&apos;il faut, et seulement ce qu&apos;il faut.&quot;
+                {t("butter.problem.quote")}
               </p>
             </motion.div>
           </motion.div>

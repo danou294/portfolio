@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code2, Database, Map, Cloud, Apple as AppleIcon, Github } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function TechStackSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const technologies = [
     { icon: Code2, name: "Flutter", color: "from-blue-400 to-cyan-400" },
@@ -30,10 +32,10 @@ export function TechStackSection() {
           className="text-center mb-20"
         >
           <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-white/5 backdrop-blur-sm border border-blue-200 dark:border-white/10 rounded-full mb-6">
-            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">Stack Technique</span>
+            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">{t("butter.techStack.badge")}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900 dark:text-white/90 font-bold">
-            Technologies & Outils
+            {t("butter.techStack.title")}
           </h2>
         </motion.div>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -77,10 +79,10 @@ export function TechStackSection() {
                 <Code2 className="w-6 h-6 text-white" />
               </div>
               <p className="text-xl text-gray-700 dark:text-white/80 leading-relaxed">
-                Butter a été développée entièrement en <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Flutter</span>, pour permettre un design élégant, performant et compatible iOS/Android. La gestion <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Firebase</span> simplifie la sauvegarde des données utilisateurs, tandis que l&apos;intégration <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Google Maps SDK</span> rend l&apos;expérience géolocalisée et fluide.
+                {t("butter.techStack.description1")} <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Flutter</span> {t("butter.techStack.description2")} <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Firebase</span> {t("butter.techStack.description3")} <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Google Maps SDK</span> {t("butter.techStack.description4")}
               </p>
               <p className="text-xl text-gray-700 dark:text-white/80 leading-relaxed">
-                La partie la plus complexe a été la gestion du déploiement <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Apple</span>, avec la configuration des certificats, profils de provisioning et sandbox pour la publication sur l&apos;App Store. Une étape longue et exigeante, mais formatrice sur tout le processus de publication mobile professionnel.
+                {t("butter.techStack.description5")} <span className="text-blue-600 dark:text-[#5AB1FF] font-semibold">Apple</span> {t("butter.techStack.description6")}
               </p>
             </div>
             {/* Glow effect */}

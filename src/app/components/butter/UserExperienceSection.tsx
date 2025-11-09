@@ -5,42 +5,44 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { Sliders, Grid3x3, FileText } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function UserExperienceSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const steps = [
     {
       number: "1",
       icon: Sliders,
       emoji: "🎯",
-      title: "Choisir ses filtres",
-      description: "Ex. 8e arrondissement, italien, €€ — des filtres clairs pour affiner la recherche",
+      title: t("butter.userExperience.steps.filters.title"),
+      description: t("butter.userExperience.steps.filters.description"),
       mockup: "3.png"
     },
     {
       number: "2",
       icon: Grid3x3,
       emoji: "📱",
-      title: "Il parcourt un feed de restaurants illustré",
-      description: "Photos, menus et avis — une navigation immersive et visuelle",
+      title: t("butter.userExperience.steps.feed.title"),
+      description: t("butter.userExperience.steps.feed.description"),
       mockup: "5.png"
     },
     {
       number: "3",
       icon: FileText,
       emoji: "📖",
-      title: "Un clic ouvre une fiche complète",
-      description: "Menu, localisation, lien de réservation, ou navigation via Waze / Plans",
+      title: t("butter.userExperience.steps.details.title"),
+      description: t("butter.userExperience.steps.details.description"),
       mockup: "6.png"
     },
     {
       number: "4",
       icon: FileText,
       emoji: "🗺️",
-      title: "Accessibilité directe au restaurant",
-      description: "Lien direct avec Plans et Waze depuis l'app — navigation fluide et sans friction vers le restaurant",
+      title: t("butter.userExperience.steps.accessibility.title"),
+      description: t("butter.userExperience.steps.accessibility.description"),
       mockup: "7.png"
     }
   ];
@@ -57,10 +59,10 @@ export function UserExperienceSection() {
           className="text-center mb-20"
         >
           <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-white/5 backdrop-blur-sm border border-blue-200 dark:border-white/10 rounded-full mb-6">
-            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">Expérience Utilisateur</span>
+            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">{t("butter.userExperience.badge")}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl text-gray-900 dark:text-white/90 font-bold">
-            Un parcours fluide et intuitif
+            {t("butter.userExperience.title")}
           </h2>
         </motion.div>
         {/* Timeline */}

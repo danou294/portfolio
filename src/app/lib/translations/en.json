@@ -128,5 +128,224 @@
       "followLinkedIn": "Follow on LinkedIn",
       "developmentNotice": "Application under development - Links will be available soon",
       "followProject": "Follow the project"
+  },
+  "butter": {
+    "hero": {
+      "title": "Butter",
+      "subtitle": "The mobile app that finds good restaurants for you",
+      "description": "A Flutter mobile application to discover the best restaurants. An app that centralizes the best addresses, in a modern, reliable and intuitive interface.",
+      "stats": "Developed with Flutter & Firebase — Exclusive database with manual selection of \"Butter validated\" restaurants"
+    },
+    "problem": {
+      "badge": "The Problem",
+      "title": "One evening in Paris, two friends were looking for a restaurant using two different apps — twenty-five minutes later, they were eating pasta.",
+      "description": "That day, we said to ourselves: \"why isn't there an app where there are only good restaurants?\" That's how Butter was born — an app that centralizes the best addresses, in a modern, reliable and intuitive interface.",
+      "quote": "\"Too much info, not always reliable, and not all in the same place — Butter brings together everything you need, and only what you need.\""
+    },
+    "vision": {
+      "title": "A reliable, simple and pleasant app to use",
+      "description": "Butter wants to become the search reflex when going out to dinner. A trusted app that combines the simplicity of a social feed with the reliability of a selective guide. The goal: make the restaurant outing enjoyable from start to finish, starting with a fluid, clear and efficient search.",
+      "features": {
+        "filters": {
+          "title": "Custom filters",
+          "description": "Neighborhood, cuisine, price — clear filters to find exactly what you're looking for"
+        },
+        "feed": {
+          "title": "Visual feed",
+          "description": "Feed-type interface with photos, menus and ambiance for an immersive discovery"
+        },
+        "navigation": {
+          "title": "Integrated navigation",
+          "description": "Direct opening in Maps / Waze and detailed sheets with reservation link"
+        }
+      }
+    },
+    "userExperience": {
+      "badge": "User Experience",
+      "title": "A fluid and intuitive journey",
+      "steps": {
+        "filters": {
+          "title": "Choose your filters",
+          "description": "E.g. 8th arrondissement, Italian, €€ — clear filters to refine the search"
+        },
+        "feed": {
+          "title": "Browse an illustrated restaurant feed",
+          "description": "Photos, menus and reviews — an immersive and visual navigation"
+        },
+        "details": {
+          "title": "One click opens a complete sheet",
+          "description": "Menu, location, reservation link, or navigation via Waze / Maps"
+        },
+        "accessibility": {
+          "title": "Direct restaurant accessibility",
+          "description": "Direct link with Maps and Waze from the app — fluid and frictionless navigation to the restaurant"
+        }
+      }
+    },
+    "features": {
+      "badge": "Main features",
+      "title": "A complete and refined experience",
+      "description": "No AI here, just human curation and manual quality — to guarantee that everything displayed is really good.",
+      "items": {
+        "feed": {
+          "title": "Feed-type interface",
+          "description": "Photos, menus, ambiance — an immersive and visual navigation"
+        },
+        "filters": {
+          "title": "Custom filters",
+          "description": "Neighborhood, cuisine, price — clear filters to refine the search"
+        },
+        "details": {
+          "title": "Detailed restaurant sheets",
+          "description": "Menu, location, reservation link — all essential information"
+        },
+        "favorites": {
+          "title": "Save favorite addresses",
+          "description": "Personalized list to easily find your best addresses"
+        },
+        "navigation": {
+          "title": "Navigation integration",
+          "description": "Direct opening in Maps / Waze for a frictionless journey"
+        },
+        "database": {
+          "title": "Exclusive database",
+          "description": "Manual selection of \"Butter validated\" restaurants — guaranteed human curation"
+        }
+      }
+    },
+    "techStack": {
+      "badge": "Technical Stack",
+      "title": "Technologies & Tools",
+      "description1": "Butter was developed entirely in",
+      "description2": "to allow elegant, performant and iOS/Android compatible design. The",
+      "description3": "management simplifies user data storage, while the",
+      "description4": "integration makes the experience geolocated and fluid.",
+      "description5": "The most complex part was managing",
+      "description6": "deployment, with configuring certificates, provisioning profiles and sandbox for App Store publication. A long and demanding step, but formative on the entire professional mobile publication process."
+    },
+    "cta": {
+      "title": "If you think Butter's something you spread on toast, you're missing out.",
+      "download": "Download on the App Store",
+      "viewSource": "View source code",
+      "signature": "Developed by",
+      "tech": "Flutter & Firebase"
+    }
+  },
+  "codesphere": {
+    "hero": {
+      "title": "🚀 CodeSphere —",
+      "subtitle": "Next-generation web IDE.",
+      "description": "Code, test and deploy directly from your browser.",
+      "tags": ["SaaS", "IDE", "Fullstack", "React", "TypeScript"]
+    },
+    "userJourney": {
+      "title": "The complete",
+      "subtitle": "user journey",
+      "description": "From project creation to code generation with AI",
+      "steps": {
+        "create": {
+          "title": "Create a project",
+          "description": "A simple and intuitive form. In a few seconds, your development environment is ready."
+        },
+        "manage": {
+          "title": "Manage your projects",
+          "description": "A UI-oriented, very visual manager. Organize and find all your projects in one place, without installation."
+        },
+        "code": {
+          "title": "Code in real-time",
+          "description": "Already in the IDE, coding. A modern, fast and fluid editor with real-time preview."
+        },
+        "ai": {
+          "title": "Premium AI Assistance",
+          "description": "An OpenAI-based AI accompanies you in your code. ChatGPT-oriented visual interface, directly integrated into the IDE."
+        }
+      }
+    },
+    "uniqueFeatures": {
+      "title": "What makes it",
+      "subtitle": "unique",
+      "features": {
+        "allInOne": {
+          "title": "All-in-one",
+          "description": "Editor, terminal, database and deployment integrated."
+        },
+        "instant": {
+          "title": "Instant",
+          "description": "Start your project without setup or dependencies."
+        },
+        "ai": {
+          "title": "Integrated intelligence",
+          "description": "The AI assistant understands your code and helps you perfect it."
+        }
+      }
+    },
+    "humanContext": {
+      "text": "CodeSphere was born from a simple idea:",
+      "highlight": "coding should be as fast as inspiration.",
+      "quote": "\"Build something people want.\"",
+      "author": "— Paul Graham (Y Combinator)"
+    },
+    "futureFeatures": {
+      "badge": "Roadmap",
+      "title": "CodeSphere",
+      "subtitle": "evolves",
+      "description": "Powerful features in development to make your workflow even smoother",
+      "features": {
+        "git": {
+          "title": "Git Integration",
+          "description": "Connect your project to GitHub, GitLab or Bitbucket. Push, pull and merge directly from the IDE.",
+          "status": "Coming soon"
+        },
+        "vercel": {
+          "title": "Vercel Deployment",
+          "description": "Deploy your project on Vercel with one click. Native integration with previews and custom domains.",
+          "status": "Coming soon"
+        },
+        "templates": {
+          "title": "Ready-to-use templates",
+          "description": "Start with React, Vue, Angular or Next.js templates. Automatic configuration, zero setup.",
+          "status": "In development"
+        },
+        "collaboration": {
+          "title": "Real-time collaboration",
+          "description": "Code as a team with live session sharing. See your teammates' changes in real-time.",
+          "status": "Coming soon"
+        }
+      },
+      "comingSoon": "Coming soon to CodeSphere",
+      "templates": {
+        "title": "Start your project in seconds with a configured template ready to code",
+        "heading": "Templates",
+        "subheading": "ready to use"
+      }
+    },
+    "joinAdventure": {
+      "title": "Join",
+      "subtitle": "the adventure",
+      "description": "Join the project as a developer to help improve CodeSphere. Contribute to the code, propose features and shape the future of web development.",
+      "benefits": {
+        "contribute": {
+          "title": "Contribute to the code",
+          "description": "Participate in development and improve the project"
+        },
+        "community": {
+          "title": "Join the community",
+          "description": "Collaborate with other passionate developers on the project"
+        },
+        "impact": {
+          "title": "Direct impact",
+          "description": "Your contributions directly shape the future of CodeSphere"
+        }
+      },
+      "cta": "Join the community"
+    },
+    "finalCta": {
+      "title": "A space to",
+      "subtitle": "build, test and learn",
+      "suffix": "— without losing a second",
+      "description": "Designed for developers who want to create, not configure.",
+      "signature": "Developed by",
+      "tech": "React, Django, Docker & OpenAI API"
+    }
   }
 }
