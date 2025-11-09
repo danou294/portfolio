@@ -136,7 +136,7 @@ export default function Skills() {
         >
           <div className="flex items-center justify-between mb-3">
             <span className="text-gray-700 dark:text-gray-300 font-medium">
-              Niveau d&apos;expertise global
+              {t("skills.expertiseLevel")}
             </span>
             <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent font-bold">
               85%

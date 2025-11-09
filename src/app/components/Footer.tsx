@@ -1,7 +1,9 @@
 "use client";
 import { Linkedin, Github, Heart } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="relative border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
       {/* Gradient Line */}
@@ -15,7 +17,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Daniel Levy
             </p>
             <p className="text-gray-500 dark:text-gray-500 flex items-center gap-1.5">
-              Fait avec <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> avec Next.js & Tailwind
+              {t("footer.madeWith")} <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> {t("footer.with")}
             </p>
           </div>
 

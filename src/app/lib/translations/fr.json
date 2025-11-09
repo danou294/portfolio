@@ -22,11 +22,25 @@
     "projects": {
       "codesphere": {
         "title": "CodeSphere",
-        "tech": "React • TypeScript • Monaco Editor"
+        "tech": "React • TypeScript • Monaco Editor",
+        "tagline": "L'IDE web nouvelle génération",
+        "description": "Code, teste et déploie directement depuis ton navigateur. Plus de setup, plus de création.",
+        "stats": {
+          "setupTime": { "label": "Temps de setup", "value": "0 sec" },
+          "templates": { "label": "Templates", "value": "10+" }
+        },
+        "benefits": ["Éditeur intégré", "Terminal intégré", "IA intégrée", "Déploiement 1-clic"]
       },
       "butter": {
         "title": "Butter",
-        "tech": "Flutter • Firebase • Google Maps"
+        "tech": "Flutter • Firebase • Google Maps",
+        "tagline": "Le guide de restaurants qui ne te déçoit jamais",
+        "description": "Découvre les meilleurs restaurants de Paris. Curation humaine, interface moderne, zéro déception.",
+        "stats": {
+          "restaurants": { "label": "Restaurants", "value": "200+" },
+          "cities": { "label": "Villes", "value": "1" }
+        },
+        "benefits": ["Feed visuel", "Filtres intelligents", "Navigation intégrée", "Base exclusive"]
       }
     },
     "cta": "Voir mes projets"
@@ -57,6 +71,7 @@
   "skills": {
     "title": "🚀 Compétences",
     "subtitle": "Ce que je peux apporter",
+    "expertiseLevel": "Niveau d'expertise global",
     "sections": {
       "architecture": {
         "title": "Architecture & modélisation",
@@ -80,6 +95,11 @@
     "title": "Mes Projets",
     "subtitle": "Découvrez mes réalisations récentes",
     "discover": "Découvrir le projet",
+    "butterShowcase": {
+      "badge": "Butter App",
+      "title": "Application mobile complète",
+      "description": "Interface moderne, expérience utilisateur optimisée et architecture cloud scalable"
+    },
     "articles": {
       "codesphere": {
         "title": "🚀 CodeSphere — L'IDE web nouvelle génération",
@@ -108,7 +128,8 @@
     "title": "Contact",
     "subtitle": "Prêt à collaborer ?",
     "collaborate": "On travaille ensemble ?",
-      "contactMe": "Me contacter",
+    "contactMe": "Me contacter",
+    "responseTime": "Temps de réponse moyen : 24 heures",
       "email": "danielevy29@gmail.com",
       "phone": "+33 6 12 34 56 78",
       "location": "Paris, France",
@@ -347,5 +368,9 @@
       "signature": "Développé par",
       "tech": "React, Django, Docker & OpenAI API"
     }
+  },
+  "footer": {
+    "madeWith": "Fait avec",
+    "with": "avec Next.js & Tailwind"
   }
 }

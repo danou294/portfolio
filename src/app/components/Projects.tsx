@@ -138,13 +138,13 @@ export default function Projects() {
             </div>
             <div className="relative text-center mb-8">
               <Badge className="mb-4 bg-violet-500/20 dark:bg-violet-500/30 text-violet-700 dark:text-violet-300 border-violet-500/30 dark:border-violet-500/40">
-                Butter App
+                {t("projects.butterShowcase.badge")}
               </Badge>
               <h3 className="text-gray-900 dark:text-white mb-3 text-2xl font-bold">
-                Application mobile complète
+                {t("projects.butterShowcase.title")}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Interface moderne, expérience utilisateur optimisée et architecture cloud scalable
+                {t("projects.butterShowcase.description")}
               </p>
             </div>
             {/* iPhone Mockups Pyramid */}

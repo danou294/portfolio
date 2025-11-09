@@ -171,7 +171,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 text-gray-500 dark:text-gray-500"
         >
-          Temps de réponse moyen : 24 heures
+          {t("contact.responseTime")}
         </motion.p>
       </div>
     </section>
