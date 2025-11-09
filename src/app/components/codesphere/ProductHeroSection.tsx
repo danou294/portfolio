@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Sparkles, Code, Github } from "lucide-react";
+import { Sparkles, Code } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import frTranslations from "../../lib/translations/fr.json";
 import enTranslations from "../../lib/translations/en.json";

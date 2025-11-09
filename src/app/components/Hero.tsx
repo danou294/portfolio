@@ -141,7 +141,7 @@ function ProjectCard3D({
             <div className="space-y-4 mt-4">
               {/* Stats */}
               <div className="flex gap-4">
-                {Object.values(projectData.stats).map((stat: any, idx: number) => (
+                {Object.values(projectData.stats).map((stat: { value: string; label: string }, idx: number) => (
                   <div key={idx} className="flex-1 bg-white/10 rounded-lg p-2 backdrop-blur-sm">
                     <div className="text-lg font-bold text-white">{stat.value}</div>
                     <div className="text-xs text-white/70">{stat.label}</div>
@@ -402,7 +402,7 @@ export default function Hero() {
                       </div>
 
                       <div className="flex gap-2 pt-2">
-                        {Object.values(projectData.stats).map((stat: any, idx: number) => (
+                        {Object.values(projectData.stats).map((stat: { value: string; label: string }, idx: number) => (
                           <div key={idx} className="flex-1 bg-white/10 rounded-lg p-2 backdrop-blur-sm">
                             <div className="text-sm font-bold text-white">{stat.value}</div>
                             <div className="text-xs text-white/70">{stat.label}</div>

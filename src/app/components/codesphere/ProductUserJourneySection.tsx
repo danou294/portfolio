@@ -50,7 +50,7 @@ export function ProductUserJourneySection() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, journeySteps.length]);
 
   const goToStep = (index: number) => {
     setActiveStep(index);
