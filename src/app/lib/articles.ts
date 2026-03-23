@@ -23,7 +23,7 @@ export const articles: Article[] = [
     image: "/images/codesphere.png",
     tags: ["React", "TypeScript", "Monaco Editor", "Django", "Firebase", "OpenAI"],
     color: "#06b6d4",
-    githubLink: "https://github.com/danou294/codesphere",
+    githubLink: "https://github.com/danou294/codesphere-public",
     liveLink: "https://codesphere.fr",
     content: `🚀 CodeSphere — L'IDE web nouvelle génération
 
@@ -145,7 +145,7 @@ J'y ai mis ma curiosité, mes erreurs, et beaucoup de café — mais surtout, ma
     image: "/images/butter.png",
     tags: ["Flutter", "Firestore", "Google Places", "Node.js"],
     color: "#FF6B35",
-    githubLink: "https://github.com/danou294/butter2",
+    githubLink: "https://github.com/danou294/butter-app",
     liveLink: "https://www.linkedin.com/company/butterappli/posts/?feedView=all",
     socialLinks: {
       linkedin: "https://www.linkedin.com/company/butterappli/posts/?feedView=all",

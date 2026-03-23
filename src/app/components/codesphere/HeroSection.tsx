@@ -76,7 +76,7 @@ export function HeroSection() {
                 Essayer maintenant
               </a>
               <a
-                href="https://github.com/danou294/codesphere"
+                href="https://github.com/danou294/codesphere-public"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-6 border-2 border-white/20 bg-transparent hover:bg-white/5 text-white rounded-lg font-medium transition-colors inline-flex items-center justify-center"
