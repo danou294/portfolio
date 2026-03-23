@@ -58,7 +58,7 @@ export function CTASection() {
           </a>
 
           <a
-            href="https://github.com/danielMusic"
+            href="https://github.com/danou294/butter-app"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-border rounded-xl font-semibold text-lg text-foreground hover:bg-secondary transition-colors"

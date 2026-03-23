@@ -56,7 +56,7 @@ export default function CodeSpherePageClient({ lang }: { lang: "fr" | "en" }) {
               <span className="text-muted-foreground">CodeSphere &copy; {new Date().getFullYear()}</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <a href="https://github.com/danielMusic" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+              <a href="https://github.com/danou294/codesphere-public" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
               <Link href="/#contact" className="hover:text-foreground transition-colors">Contact</Link>
             </div>
           </div>

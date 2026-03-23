@@ -51,7 +51,7 @@ export function ProductHeroSection() {
               {t("article.tryNow")}
             </a>
             <a
-              href="https://github.com/danielMusic"
+              href="https://github.com/danou294/codesphere-public"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-border rounded-xl font-semibold text-foreground hover:bg-secondary transition-colors"

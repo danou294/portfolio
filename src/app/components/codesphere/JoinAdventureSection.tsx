@@ -54,7 +54,7 @@ export function JoinAdventureSection() {
 
         <div className="text-center">
           <a
-            href="https://github.com/danielMusic"
+            href="https://github.com/danou294/codesphere-public"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] rounded-xl font-semibold shadow-lg hover:opacity-90 transition-opacity"

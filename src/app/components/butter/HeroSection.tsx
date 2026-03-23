@@ -58,7 +58,7 @@ export function HeroSection() {
               </motion.a>
 
               <motion.a
-                href="https://github.com/danielMusic"
+                href="https://github.com/danou294/butter-app"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
