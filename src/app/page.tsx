@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main className="bg-theme transition-colors duration-300">
+      <a href="#hero" className="skip-link">Aller au contenu principal</a>
       <Header />
       <Hero />
       <About />

@@ -186,51 +186,51 @@
       "title": "Un parcours fluide et intuitif",
       "steps": {
         "filters": {
-          "title": "Choisir ses filtres",
-          "description": "Ex. 8e arrondissement, italien, €€ — des filtres clairs pour affiner la recherche"
+          "title": "Explore",
+          "description": "Découvre les meilleurs restaurants de Paris. Parcours notre sélection triée sur le volet. Chaque adresse a été testée et approuvée. Filtre par cuisine, quartier ou ambiance."
         },
         "feed": {
-          "title": "Il parcourt un feed de restaurants illustré",
-          "description": "Photos, menus et avis — une navigation immersive et visuelle"
+          "title": "Guides",
+          "description": "Des guides pour chaque envie. Brunch, terrasse, date, veggie... Nos guides thématiques te donnent les bonnes adresses pour chaque occasion."
         },
         "details": {
-          "title": "Un clic ouvre une fiche complète",
-          "description": "Menu, localisation, lien de réservation, ou navigation via Waze / Plans"
+          "title": "Favoris",
+          "description": "Sauvegarde tes adresses préférées. Enregistre les restos qui te plaisent, organise-les en listes et partage-les avec tes amis. Plus besoin de chercher à chaque fois."
         },
         "accessibility": {
-          "title": "Accessibilité directe au restaurant",
-          "description": "Lien direct avec Plans et Waze depuis l'app — navigation fluide et sans friction vers le restaurant"
+          "title": "Carte",
+          "description": "Trouve un resto autour de toi. Visualise tous les restaurants sur la carte. Filtre par type de cuisine, gamme de prix ou disponibilité. Trouve l'adresse parfaite en un coup d'oeil."
         }
       }
     },
     "features": {
-      "badge": "Fonctionnalités principales",
-      "title": "Une expérience complète et soignée",
-      "description": "Aucune IA ici, juste de la curation humaine et de la qualité manuelle — pour garantir que tout ce qui est affiché est réellement bon.",
+      "badge": "Tout ce qu'il te faut",
+      "title": "Rejoins +10 000 adeptes de bonnes adresses",
+      "description": "Tout ce qu'il te faut pour trouver ton prochain restaurant. Aucune IA, juste de la curation humaine.",
       "items": {
         "feed": {
-          "title": "Interface de type feed",
-          "description": "Photos, menus, ambiance — une navigation immersive et visuelle"
+          "title": "Découvre",
+          "description": "Gratuitement les meilleurs restaurants de Paris. Parcours notre sélection triée sur le volet, chaque adresse testée et approuvée."
         },
         "filters": {
-          "title": "Filtres personnalisés",
-          "description": "Quartier, cuisine, prix — des filtres clairs pour affiner la recherche"
+          "title": "Accède",
+          "description": "Directement aux photos, menus et à la réservation. Filtre par cuisine, quartier, prix ou ambiance."
         },
         "details": {
-          "title": "Fiches restaurants détaillées",
-          "description": "Menu, localisation, lien de réservation — toutes les infos essentielles"
+          "title": "Guides thématiques",
+          "description": "Brunch, terrasse, date, veggie... Nos guides te donnent les bonnes adresses pour chaque occasion."
         },
         "favorites": {
-          "title": "Sauvegarde d'adresses favorites",
-          "description": "Liste personnalisée pour retrouver facilement vos meilleures adresses"
+          "title": "Sauvegarde",
+          "description": "Tes adresses préférées et partage-les avec tes amis. Organise-les en listes personnalisées."
         },
         "navigation": {
-          "title": "Intégration navigation",
-          "description": "Ouverture directe dans Plans / Waze pour un trajet sans friction"
+          "title": "Carte interactive",
+          "description": "Visualise tous les restaurants autour de toi. Filtre et trouve l'adresse parfaite en un coup d'oeil."
         },
         "database": {
-          "title": "Base de données exclusive",
-          "description": "Sélection manuelle des restaurants \"validés Butter\" — curation humaine garantie"
+          "title": "800+ restaurants",
+          "description": "Sélection manuelle des restaurants validés Butter — curation humaine garantie dans 3 villes."
         }
       }
     },

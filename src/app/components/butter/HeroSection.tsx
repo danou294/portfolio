@@ -2,160 +2,102 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Apple, Github } from "lucide-react";
-import { useLanguage } from "../../context/LanguageContext";
+import { ArrowRight, Github } from "lucide-react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export function HeroSection() {
   const { t } = useLanguage();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0A0A0E]">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 dark:from-[#0A0A0E] via-gray-100 dark:via-[#1a1a2e] to-gray-50 dark:to-[#0A0A0E]" />
-      
-      {/* Animated particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-blue-400/20 dark:bg-blue-400/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] bg-[#F59E0B]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-[350px] h-[350px] bg-[#EC4899]/8 rounded-full blur-3xl" />
       </div>
-      <div className="relative z-10 container mx-auto px-6 py-20">
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            {/* Logo */}
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-              className="w-20 h-20 bg-gradient-to-br from-blue-500 to-violet-600 dark:from-[#5AB1FF] dark:to-[#B77BFF] rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/30 dark:shadow-blue-500/30 p-4"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1, type: "spring" }}
+              className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center shadow-lg p-4"
             >
-              <Image 
-                src="/images/butter.png" 
-                alt="Butter" 
-                width={48} 
-                height={48} 
-                className="object-contain"
-              />
+              <Image src="/images/butter.png" alt="Butter" width={48} height={48} className="object-contain" />
             </motion.div>
-            {/* Title */}
+
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl bg-gradient-to-r from-blue-500 to-violet-600 dark:from-[#5AB1FF] dark:to-[#B77BFF] bg-clip-text text-transparent font-bold">
-                {t("butter.hero.title")}
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-heading">
+                <span className="gradient-text">{t("butter.hero.title")}</span>
               </h1>
-              <h2 className="text-3xl lg:text-4xl text-gray-900 dark:text-white/90 font-semibold">
+              <h2 className="text-3xl lg:text-4xl font-semibold text-heading">
                 {t("butter.hero.subtitle")}
               </h2>
-              <p className="text-xl text-gray-600 dark:text-white/60">
+              <p className="text-xl text-body">
                 {t("butter.hero.description")}
               </p>
             </div>
-            {/* CTAs */}
+
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href="https://apps.apple.com/fr/app/butter-guide-de-restaurants/id6749227938"
+                href="https://apps.apple.com/fr/app/butter-guide-de-restaurants/id6749227938?utm_source=portfolio&utm_medium=web&utm_campaign=butter_hero"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-violet-600 dark:from-[#5AB1FF] dark:to-[#B77BFF] rounded-full flex items-center justify-center gap-3 shadow-lg shadow-blue-500/30 dark:shadow-blue-500/30 hover:shadow-blue-500/50 dark:hover:shadow-blue-500/50 transition-shadow text-white font-semibold"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-8 py-4 border border-foreground rounded-full flex items-center justify-center gap-2 font-medium text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                <Apple className="w-5 h-5" />
                 {t("article.getOnAppStore")}
+                <ArrowRight className="w-4 h-4" />
               </motion.a>
-              
+
               <motion.a
-                href="https://github.com/danou294/Butter-public.git"
+                href="https://github.com/danielMusic"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-gray-300 dark:border-white/20 rounded-full flex items-center justify-center gap-3 backdrop-blur-sm hover:bg-gray-100 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white/40 transition-colors text-gray-900 dark:text-white font-semibold"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-8 py-4 border-2 border-border rounded-xl flex items-center justify-center gap-3 text-foreground font-semibold hover:bg-secondary transition-colors"
               >
                 <Github className="w-5 h-5" />
                 {t("article.viewCode")}
               </motion.a>
             </div>
-            {/* Stats */}
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="text-sm text-gray-500 dark:text-white/40"
+              transition={{ delay: 0.8 }}
+              className="text-sm text-muted-foreground"
             >
               {t("butter.hero.stats")}
             </motion.p>
           </motion.div>
-          {/* Right - Phone Mockups */}
+
+          {/* Right - iPhone 3D mockup */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[700px] flex items-end justify-center overflow-hidden"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative flex justify-center"
           >
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 dark:from-[#5AB1FF]/20 to-purple-500/20 dark:to-[#B77BFF]/20 blur-[100px] rounded-full" />
-            
-            <div className="relative flex items-end justify-center gap-6 -mb-32">
-              {[
-                { mockup: "6.png", height: "h-[600px]", width: "w-80", zIndex: 1, offset: "-mx-6" },
-                { mockup: "5.png", height: "h-[700px]", width: "w-96", zIndex: 3, offset: "" },
-                { mockup: "3.png", height: "h-[600px]", width: "w-80", zIndex: 1, offset: "-mx-6" }
-              ].map((item, index) => (
-                <motion.div
-                  key={item.mockup}
-                  initial={{ opacity: 0, y: 50, rotateY: index === 0 ? -15 : index === 2 ? 15 : 0 }}
-                  animate={{ opacity: 1, y: 0, rotateY: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: 0.4 + index * 0.15,
-                    type: "spring"
-                  }}
-                  className={`relative ${item.offset}`}
-                  style={{
-                    zIndex: item.zIndex
-                  }}
-                >
-                  <div className={`${item.width} ${item.height} relative overflow-hidden`}>
-                    <Image
-                      src={`/Assets/Mockups/${item.mockup}`}
-                      alt={`Butter App Mockup ${index + 1}`}
-                      fill
-                      className="object-cover object-top"
-                      unoptimized
-                    />
-                    {/* Gradient fade at bottom for truncation effect */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-[#0A0A0E] to-transparent pointer-events-none" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            {/* Reflection */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white dark:from-[#0A0A0E] to-transparent" />
+            <Image
+              src="/Assets/Wireframes/mockup.webp"
+              alt="Butter App - Accueil"
+              width={500}
+              height={600}
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
-

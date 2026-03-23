@@ -1,172 +1,115 @@
 "use client";
 import { motion } from "framer-motion";
-import { Badge } from "./ui/badge";
-import { Progress } from "./ui/progress";
-import { Database, Code, Server, Smartphone } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const skills = [
-  'Node.js',
-  'React',
-  'Next.js',
-  'Flutter',
-  'MongoDB',
-  'Firestore',
-  'Docker',
-  'AWS',
-  'REST API',
-  'TypeScript',
-  'Tailwind CSS',
-  'CI/CD'
+  { name: "React", color: "#61DAFB" },
+  { name: "Next.js", color: "#000000" },
+  { name: "TypeScript", color: "#3178C6" },
+  { name: "Node.js", color: "#339933" },
+  { name: "Flutter", color: "#02569B" },
+  { name: "Firebase", color: "#FFCA28" },
+  { name: "MongoDB", color: "#47A248" },
+  { name: "Docker", color: "#2496ED" },
+  { name: "AWS", color: "#FF9900" },
+  { name: "Tailwind CSS", color: "#06B6D4" },
+  { name: "REST API", color: "#F59E0B" },
+  { name: "CI/CD", color: "#EC4899" },
 ];
 
-const domains = [
+const services = [
   {
-    icon: <Database className="w-6 h-6" />,
     titleKey: "skills.sections.architecture.title",
     descriptionKey: "skills.sections.architecture.description",
-    color: 'from-blue-500 to-cyan-500'
+    gradient: "from-amber-400 to-orange-500",
   },
   {
-    icon: <Code className="w-6 h-6" />,
     titleKey: "skills.sections.apis.title",
     descriptionKey: "skills.sections.apis.description",
-    color: 'from-violet-500 to-purple-500'
+    gradient: "from-violet-500 to-purple-600",
   },
   {
-    icon: <Server className="w-6 h-6" />,
     titleKey: "skills.sections.devops.title",
     descriptionKey: "skills.sections.devops.description",
-    color: 'from-pink-500 to-rose-500'
+    gradient: "from-rose-400 to-pink-500",
   },
   {
-    icon: <Smartphone className="w-6 h-6" />,
     titleKey: "skills.sections.ui.title",
     descriptionKey: "skills.sections.ui.description",
-    color: 'from-cyan-500 to-teal-500'
-  }
+    gradient: "from-cyan-400 to-teal-500",
+  },
 ];
 
 export default function Skills() {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-950">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-violet-500/10 dark:bg-violet-500/20 rounded-full blur-3xl" />
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-br from-blue-400 to-violet-400 rounded-full"
-            animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.2, 0.6, 0.2],
-              scale: [1, 1.2, 1]
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section id="skills" className="relative py-24 bg-card">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-4">
             {t("skills.title")}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-body max-w-2xl mx-auto text-lg">
             {t("skills.subtitle")}
           </p>
         </motion.div>
 
-        {/* Skills Cloud */}
+        {/* Skills pills */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap justify-center gap-3 mb-16 max-w-4xl mx-auto"
         >
           {skills.map((skill, index) => (
-            <motion.div
-              key={skill}
-              initial={{ opacity: 0, scale: 0 }}
+            <motion.span
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 + index * 0.05 }}
-              whileHover={{ scale: 1.1, y: -5 }}
+              transition={{ delay: 0.15 + index * 0.03 }}
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-background border border-border text-sm font-medium text-heading cursor-default hover:border-[#F59E0B]/50 hover:shadow-sm transition-all"
             >
-              <Badge 
-                className="px-5 py-2.5 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-all cursor-pointer shadow-sm"
-              >
-                {skill}
-              </Badge>
-            </motion.div>
+              <span
+                className="w-2 h-2 rounded-full flex-shrink-0"
+                style={{ backgroundColor: skill.color }}
+              />
+              {skill.name}
+            </motion.span>
           ))}
         </motion.div>
 
-        {/* Expertise Level */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl mx-auto mb-16 p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-gray-700 dark:text-gray-300 font-medium">
-              {t("skills.expertiseLevel")}
-            </span>
-            <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent font-bold">
-              85%
-            </span>
-          </div>
-          <Progress value={85} className="h-3" />
-        </motion.div>
-
-        {/* Domain Cards */}
+        {/* Services grid 2x2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {domains.map((domain, index) => (
+          {services.map((service, index) => (
             <motion.div
-              key={domain.titleKey}
+              key={service.titleKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all group"
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="p-6 rounded-2xl bg-background border border-border hover:shadow-lg transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${domain.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>
-                  {domain.icon}
+                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform`}>
+                  <ServiceIcon index={index} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-gray-900 dark:text-white mb-2 font-semibold text-lg">
-                    {t(domain.titleKey)}
+                  <h3 className="font-semibold text-heading text-lg mb-2">
+                    {t(service.titleKey)}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {t(domain.descriptionKey)}
+                  <p className="text-body text-sm">
+                    {t(service.descriptionKey)}
                   </p>
                 </div>
               </div>
@@ -176,4 +119,28 @@ export default function Skills() {
       </div>
     </section>
   );
+}
+
+function ServiceIcon({ index }: { index: number }) {
+  const icons = [
+    // Database
+    <svg key="db" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+      <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+    </svg>,
+    // Code
+    <svg key="code" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+    </svg>,
+    // Cloud
+    <svg key="cloud" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+    </svg>,
+    // Smartphone
+    <svg key="phone" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+    </svg>,
+  ];
+  return icons[index] || null;
 }

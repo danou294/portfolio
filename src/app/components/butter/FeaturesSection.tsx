@@ -1,109 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Filter, Image as ImageIcon, Heart, FileText, Navigation } from "lucide-react";
-import { useLanguage } from "../../context/LanguageContext";
+import Image from "next/image";
+import { useLanguage } from "../../contexts/LanguageContext";
+
+const features = [
+  { key: "feed", icon: "📸", gradient: "from-amber-400 to-orange-500", wireframe: "/Assets/Wireframes/app-feed.webp" },
+  { key: "filters", icon: "🎯", gradient: "from-rose-400 to-pink-500", wireframe: "/Assets/Wireframes/app-home.webp" },
+  { key: "details", icon: "📋", gradient: "from-violet-400 to-purple-500", wireframe: "/Assets/Wireframes/app-guides.webp" },
+  { key: "favorites", icon: "⭐", gradient: "from-yellow-400 to-amber-500", wireframe: "/Assets/Wireframes/app-favorites.webp" },
+  { key: "navigation", icon: "🗺️", gradient: "from-cyan-400 to-teal-500", wireframe: "/Assets/Wireframes/app-map.webp" },
+  { key: "database", icon: "✅", gradient: "from-emerald-400 to-green-500", wireframe: null },
+];
 
 export function FeaturesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useLanguage();
 
-  const features = [
-    {
-      icon: ImageIcon,
-      title: t("butter.features.items.feed.title"),
-      description: t("butter.features.items.feed.description"),
-      emoji: "📸"
-    },
-    {
-      icon: Filter,
-      title: t("butter.features.items.filters.title"),
-      description: t("butter.features.items.filters.description"),
-      emoji: "🎯"
-    },
-    {
-      icon: FileText,
-      title: t("butter.features.items.details.title"),
-      description: t("butter.features.items.details.description"),
-      emoji: "📋"
-    },
-    {
-      icon: Heart,
-      title: t("butter.features.items.favorites.title"),
-      description: t("butter.features.items.favorites.description"),
-      emoji: "💾"
-    },
-    {
-      icon: Navigation,
-      title: t("butter.features.items.navigation.title"),
-      description: t("butter.features.items.navigation.description"),
-      emoji: "🗺️"
-    },
-    {
-      icon: FileText,
-      title: t("butter.features.items.database.title"),
-      description: t("butter.features.items.database.description"),
-      emoji: "✨"
-    }
-  ];
-
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden bg-white dark:bg-[#0A0A0E]">
-      {/* Background */}
-      <div className="absolute inset-0 bg-white dark:bg-[#0A0A0E]" />
-      
-      {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-500/10 dark:bg-[#5AB1FF]/10 blur-[120px] rounded-full" />
-      
-      <div className="relative z-10 container mx-auto px-6">
+    <section className="py-24 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-white/5 backdrop-blur-sm border border-blue-200 dark:border-white/10 rounded-full mb-6">
-            <span className="text-sm text-blue-600 dark:text-[#5AB1FF] font-semibold">{t("butter.features.badge")}</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900 dark:text-white/90 font-bold">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/20 text-sm font-medium text-[#B45309] dark:text-[#FCD34D] mb-4">
+            {t("butter.features.badge")}
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-4">
             {t("butter.features.title")}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-white/60 max-w-3xl mx-auto">
+          <p className="text-body text-lg max-w-2xl mx-auto">
             {t("butter.features.description")}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="group relative p-6 bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-3xl hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300 h-full"
+              key={feature.key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              whileHover={{ y: -4 }}
+              className="rounded-2xl bg-card border border-border hover:shadow-lg transition-all group overflow-hidden"
             >
-              {/* Icon */}
-              <div className="mb-4 relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500/20 dark:from-[#5AB1FF]/20 to-purple-500/20 dark:to-[#B77BFF]/20 rounded-2xl flex items-center justify-center border border-gray-200 dark:border-white/10 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">{feature.emoji}</span>
+              {/* Screenshot preview */}
+              {feature.wireframe && (
+                <div className="relative h-40 overflow-hidden bg-secondary">
+                  <Image
+                    src={feature.wireframe}
+                    alt={feature.key}
+                    fill
+                    className="object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card" />
                 </div>
-                {/* Glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 dark:from-[#5AB1FF]/20 to-purple-500/20 dark:to-[#B77BFF]/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              )}
+
+              <div className="p-6">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center text-xl mb-4 shadow-md group-hover:scale-105 transition-transform`}>
+                  {feature.icon}
+                </div>
+                <h3 className="font-bold text-heading mb-2">
+                  {t(`butter.features.items.${feature.key}.title`)}
+                </h3>
+                <p className="text-body text-sm">
+                  {t(`butter.features.items.${feature.key}.description`)}
+                </p>
               </div>
-              
-              {/* Content */}
-              <h3 className="text-xl mb-3 text-gray-900 dark:text-white/90 font-semibold">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 dark:text-white/60 leading-relaxed">
-                {feature.description}
-              </p>
-              
-              {/* Card glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/0 dark:from-[#5AB1FF]/0 to-purple-500/0 dark:to-[#B77BFF]/0 group-hover:from-blue-500/20 dark:group-hover:from-[#5AB1FF]/20 group-hover:to-purple-500/20 dark:group-hover:to-[#B77BFF]/20 blur-xl rounded-3xl -z-10 transition-all duration-300" />
             </motion.div>
           ))}
         </div>
@@ -111,4 +79,3 @@ export function FeaturesSection() {
     </section>
   );
 }
-

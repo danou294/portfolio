@@ -1,4 +1,4 @@
-import { Language } from '../context/LanguageContext';
+import { Language } from "../contexts/LanguageContext";
 import frTranslations from './translations/fr.json';
 import enTranslations from './translations/en.json';
 

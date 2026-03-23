@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { SiAppstore } from "react-icons/si";
+import { ArrowRight } from "lucide-react";
 import { getArticles } from "../../lib/articles-new";
-import { useLanguage } from "../../context/LanguageContext";
+import { useLanguage } from "../../contexts/LanguageContext";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageToggle from "../../components/LanguageToggle";
 
@@ -106,10 +106,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 href={article.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 border border-foreground rounded-full text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                 aria-label={language === 'fr' ? "Obtenir sur l'App Store" : "Get on the App Store"}
               >
-                <SiAppstore className="w-4 h-4 text-gray-900 dark:text-white" />
+                {language === 'fr' ? "Télécharger" : "Download"}
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             )}
             {article.liveLink && article.id !== 'butter' && (
@@ -189,25 +190,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   href={article.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-3 px-8 py-4 border-2 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 ${
-                    article.id === 'butter' 
-                      ? 'border-primary text-cyan-500 dark:text-cyan-400 hover:bg-primary hover:text-white hover:shadow-xl hover:shadow-primary/25' 
-                      : 'border-primary text-cyan-500 dark:text-cyan-400 hover:bg-primary hover:text-white hover:shadow-xl hover:shadow-primary/25'
-                  }`}
+                  className="inline-flex items-center gap-2 px-8 py-4 border border-foreground rounded-full font-medium text-lg text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                 >
-                  {article.id === 'butter' ? (
-                    <>
-                      <SiAppstore className="w-6 h-6 text-cyan-500 dark:text-cyan-400 group-hover:text-white transition-colors duration-300" />
-                      {t("article.getOnAppStore")}
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      {t("article.tryNow")}
-                    </>
-                  )}
+                  {article.id === 'butter' ? t("article.getOnAppStore") : t("article.tryNow")}
+                  <ArrowRight className="w-5 h-5" />
                 </a>
               )}
             </div>
@@ -242,10 +228,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   href={article.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-2xl bg-white dark:bg-white border-2 border-gray-900 dark:border-gray-300 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-gray-900/25"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full font-medium text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                   aria-label={language === 'fr' ? "Obtenir sur l'App Store" : "Get on the App Store"}
                 >
-                  <SiAppstore className="w-8 h-8 text-gray-900 dark:text-gray-300" />
+                  {language === 'fr' ? "Télécharger Butter" : "Download Butter"}
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               )}
               {article.socialLinks.linkedin && (

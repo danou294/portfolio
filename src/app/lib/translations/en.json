@@ -186,51 +186,51 @@
       "title": "A fluid and intuitive journey",
       "steps": {
         "filters": {
-          "title": "Choose your filters",
-          "description": "E.g. 8th arrondissement, Italian, €€ — clear filters to refine the search"
+          "title": "Explore",
+          "description": "Discover the best restaurants in Paris. Browse our hand-picked selection. Every address has been tested and approved. Filter by cuisine, neighborhood or vibe."
         },
         "feed": {
-          "title": "Browse an illustrated restaurant feed",
-          "description": "Photos, menus and reviews — an immersive and visual navigation"
+          "title": "Guides",
+          "description": "Guides for every craving. Brunch, terrace, date night, veggie... Our curated guides give you the right spots for every occasion."
         },
         "details": {
-          "title": "One click opens a complete sheet",
-          "description": "Menu, location, reservation link, or navigation via Waze / Maps"
+          "title": "Favorites",
+          "description": "Save your favorite addresses. Bookmark the restaurants you love, organize them into lists and share with friends. No more searching every time."
         },
         "accessibility": {
-          "title": "Direct restaurant accessibility",
-          "description": "Direct link with Maps and Waze from the app — fluid and frictionless navigation to the restaurant"
+          "title": "Map",
+          "description": "Find a restaurant near you. View all restaurants on the map. Filter by cuisine type, price range or availability. Find the perfect spot at a glance."
         }
       }
     },
     "features": {
-      "badge": "Main features",
-      "title": "A complete and refined experience",
-      "description": "No AI here, just human curation and manual quality — to guarantee that everything displayed is really good.",
+      "badge": "Everything you need",
+      "title": "Join 10,000+ food lovers",
+      "description": "Everything you need to find your next restaurant. No AI, just human curation.",
       "items": {
         "feed": {
-          "title": "Feed-type interface",
-          "description": "Photos, menus, ambiance — an immersive and visual navigation"
+          "title": "Discover",
+          "description": "The best restaurants in Paris for free. Browse our hand-picked selection, every address tested and approved."
         },
         "filters": {
-          "title": "Custom filters",
-          "description": "Neighborhood, cuisine, price — clear filters to refine the search"
+          "title": "Access",
+          "description": "Photos, menus and reservations directly. Filter by cuisine, neighborhood, price or vibe."
         },
         "details": {
-          "title": "Detailed restaurant sheets",
-          "description": "Menu, location, reservation link — all essential information"
+          "title": "Curated guides",
+          "description": "Brunch, terrace, date night, veggie... Our guides give you the right spots for every occasion."
         },
         "favorites": {
-          "title": "Save favorite addresses",
-          "description": "Personalized list to easily find your best addresses"
+          "title": "Save",
+          "description": "Your favorite addresses and share them with friends. Organize them into personalized lists."
         },
         "navigation": {
-          "title": "Navigation integration",
-          "description": "Direct opening in Maps / Waze for a frictionless journey"
+          "title": "Interactive map",
+          "description": "View all restaurants around you. Filter and find the perfect spot at a glance."
         },
         "database": {
-          "title": "Exclusive database",
-          "description": "Manual selection of \"Butter validated\" restaurants — guaranteed human curation"
+          "title": "800+ restaurants",
+          "description": "Hand-picked Butter-validated restaurants — guaranteed human curation across 3 cities."
         }
       }
     },
