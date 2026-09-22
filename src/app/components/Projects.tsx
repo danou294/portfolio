@@ -79,7 +79,7 @@ export default function Projects() {
                         alt={t(`projects.caseStudies.${study.id}.title`)}
                         width={64}
                         height={64}
-                        className="max-h-16 w-auto object-contain"
+                        className="h-16 w-16 object-contain"
                         unoptimized
                       />
                     ) : (

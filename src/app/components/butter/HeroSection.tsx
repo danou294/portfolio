@@ -29,7 +29,7 @@ export function HeroSection() {
               transition={{ delay: 0.1, type: "spring" }}
               className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center shadow-lg p-4"
             >
-              <Image src="/images/butter.png" alt="Butter" width={48} height={48} className="object-contain" />
+              <Image src="/images/butter.png" alt="Butter" width={48} height={48} className="h-12 w-12 object-contain" />
             </motion.div>
 
             <div className="space-y-4">
@@ -80,7 +80,7 @@ export function HeroSection() {
               alt="Butter App - Accueil"
               width={500}
               height={600}
-              className="object-contain drop-shadow-2xl"
+              className="h-auto w-full max-w-[500px] object-contain drop-shadow-2xl"
               priority
             />
           </motion.div>

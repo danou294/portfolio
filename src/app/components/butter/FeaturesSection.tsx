@@ -55,6 +55,7 @@ export function FeaturesSection() {
                     src={feature.wireframe}
                     alt={feature.key}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card" />

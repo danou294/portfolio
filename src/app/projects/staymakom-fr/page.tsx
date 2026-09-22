@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CaseStudyJsonLd } from "../../components/CaseStudyJsonLd";
 import CaseStudyPage from "../../components/CaseStudyPage";
 
 export const metadata: Metadata = {
@@ -14,9 +15,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.levy-daniel.fr/projects/staymakom-fr",
+    languages: {
+      fr: "https://www.levy-daniel.fr/projects/staymakom-fr",
+      en: "https://www.levy-daniel.fr/projects/staymakom-en",
+      "x-default": "https://www.levy-daniel.fr/projects/staymakom-fr",
+    },
   },
 };
 
 export default function StayMakomFrPage() {
-  return <CaseStudyPage slug="staymakom" lang="fr" />;
+  return (
+    <>
+      <CaseStudyJsonLd slug="staymakom" lang="fr" />
+      <CaseStudyPage slug="staymakom" lang="fr" />
+    </>
+  );
 }

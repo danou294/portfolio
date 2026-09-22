@@ -10,12 +10,14 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['400', '500', 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.levy-daniel.fr'),
   title: {
-    default: 'Daniel Levy — Développeur freelance web, mobile & IA',
+    default: 'Daniel Levy — Développeur web et mobile freelance',
     template: '%s | Daniel Levy',
   },
   description:
-    'Développeur freelance web, mobile et IA. Je construis des SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking, paiement et mise en ligne.',
+    'Développeur web et mobile freelance. Je construis des SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking, paiement et IA.',
   keywords: [
+    'développeur web et mobile',
+    'développeur web et mobile freelance',
     'développeur freelance',
     'développeur web mobile IA',
     'product builder',
@@ -47,23 +49,23 @@ export const metadata: Metadata = {
     alternateLocale: 'en_US',
     url: 'https://www.levy-daniel.fr',
     siteName: 'Daniel Levy',
-    title: 'Daniel Levy — Développeur freelance web, mobile & IA',
+    title: 'Daniel Levy — Développeur web et mobile freelance',
     description:
-      'Je construis des SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking, paiement et mise en ligne.',
+      'Développeur web et mobile freelance. Je construis des SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking, paiement et IA.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Daniel Levy — Développeur freelance web, mobile & IA',
+        alt: 'Daniel Levy — Développeur web et mobile freelance',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Daniel Levy — Développeur freelance web, mobile & IA',
+    title: 'Daniel Levy — Développeur web et mobile freelance',
     description:
-      'SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking et mise en ligne.',
+      'SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking, paiement et IA.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -93,9 +95,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body className={`${spaceGrotesk.className} bg-theme text-theme transition-colors duration-300`}>
+        <JsonLd />
         <ThemeProvider>
           <LanguageProvider>
-            <JsonLd />
             {children}
           </LanguageProvider>
         </ThemeProvider>

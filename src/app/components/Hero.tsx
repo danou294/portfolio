@@ -52,7 +52,7 @@ export default function Hero() {
               alt={projectData.title}
               width={28}
               height={28}
-              className="object-contain rounded-md"
+              className="h-7 w-7 object-contain rounded-md"
               unoptimized
             />
           </div>

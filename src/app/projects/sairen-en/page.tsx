@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CaseStudyJsonLd } from "../../components/CaseStudyJsonLd";
 import CaseStudyPage from "../../components/CaseStudyPage";
 
 export const metadata: Metadata = {
@@ -14,9 +15,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.levy-daniel.fr/projects/sairen-en",
+    languages: {
+      fr: "https://www.levy-daniel.fr/projects/sairen-fr",
+      en: "https://www.levy-daniel.fr/projects/sairen-en",
+      "x-default": "https://www.levy-daniel.fr/projects/sairen-fr",
+    },
   },
 };
 
 export default function SairenEnPage() {
-  return <CaseStudyPage slug="sairen" lang="en" />;
+  return (
+    <>
+      <CaseStudyJsonLd slug="sairen" lang="en" />
+      <CaseStudyPage slug="sairen" lang="en" />
+    </>
+  );
 }

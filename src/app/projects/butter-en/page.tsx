@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ButterJsonLd } from "../../components/ButterJsonLd";
 import ButterPageClient from "../butter-fr/ButterPageClient";
 
 export const metadata: Metadata = {
@@ -14,9 +15,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.levy-daniel.fr/projects/butter-en",
+    languages: {
+      fr: "https://www.levy-daniel.fr/projects/butter-fr",
+      en: "https://www.levy-daniel.fr/projects/butter-en",
+      "x-default": "https://www.levy-daniel.fr/projects/butter-fr",
+    },
   },
 };
 
 export default function ButterEnPage() {
-  return <ButterPageClient lang="en" />;
+  return (
+    <>
+      <ButterJsonLd lang="en" />
+      <ButterPageClient lang="en" />
+    </>
+  );
 }

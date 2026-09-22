@@ -26,7 +26,7 @@ export function CTASection() {
           className="inline-block"
         >
           <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center shadow-lg mx-auto p-4">
-            <Image src="/images/butter.png" alt="Butter" width={64} height={64} className="object-contain" />
+            <Image src="/images/butter.png" alt="Butter" width={64} height={64} className="h-16 w-16 object-contain" />
           </div>
         </motion.div>
 

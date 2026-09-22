@@ -112,7 +112,7 @@ export default function CaseStudyPage({
                     alt={caseStudy.title}
                     width={104}
                     height={104}
-                    className="max-h-24 w-auto object-contain"
+                    className="h-24 w-24 object-contain"
                     priority
                     unoptimized
                   />
