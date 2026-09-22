@@ -53,7 +53,6 @@ export default function Hero() {
               width={28}
               height={28}
               className="h-7 w-7 object-contain rounded-md"
-              unoptimized
             />
           </div>
           <div>
@@ -123,7 +122,6 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6"
-            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif", letterSpacing: 0 }}
           >
             <span className="text-heading">{t("hero.title").split(" ")[0]} </span>
             <span className="gradient-text">{t("hero.title").split(" ").slice(1).join(" ")}</span>

@@ -109,7 +109,6 @@ export function HeroSection() {
                     width={800}
                     height={450}
                     className="w-full h-full object-contain"
-                    unoptimized
                   />
                 </div>
               </div>
@@ -152,4 +151,3 @@ export function HeroSection() {
     </section>
   );
 }
-

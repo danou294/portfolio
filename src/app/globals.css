@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -96,13 +95,13 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
     line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.03em;
+    font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+    letter-spacing: 0;
     font-weight: 700;
     line-height: 1.2;
   }
@@ -144,6 +143,10 @@ html {
 
 .text-muted-custom {
   color: var(--muted-foreground);
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
 }
 
 .border-warm {

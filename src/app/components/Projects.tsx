@@ -80,7 +80,6 @@ export default function Projects() {
                         width={64}
                         height={64}
                         className="h-16 w-16 object-contain"
-                        unoptimized
                       />
                     ) : (
                       <Icon className="h-10 w-10 text-[#111113]" />

@@ -51,7 +51,6 @@ export function MacMockup({ image, alt, color = "#5AB1FF" }: MacMockupProps) {
               width={1200}
               height={675}
               className="w-full h-auto object-contain"
-              unoptimized
             />
           </div>
         </div>
@@ -68,4 +67,3 @@ export function MacMockup({ image, alt, color = "#5AB1FF" }: MacMockupProps) {
     </div>
   );
 }
-

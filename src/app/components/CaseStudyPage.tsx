@@ -114,7 +114,6 @@ export default function CaseStudyPage({
                     height={104}
                     className="h-24 w-24 object-contain"
                     priority
-                    unoptimized
                   />
                 </div>
               </motion.div>

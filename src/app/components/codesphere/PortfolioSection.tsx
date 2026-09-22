@@ -77,7 +77,6 @@ export function PortfolioSection() {
                 width={1200}
                 height={675}
                 className="w-full h-auto"
-                unoptimized
               />
             </div>
             {/* Floating elements */}
@@ -183,4 +182,3 @@ export function PortfolioSection() {
     </section>
   );
 }
-

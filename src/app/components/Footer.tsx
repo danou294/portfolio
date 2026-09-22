@@ -8,8 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span
-              className="font-bold text-heading"
-              style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+              className="font-display font-bold text-heading"
             >
               daniel<span className="text-[#F59E0B]">.</span>levy
             </span>
