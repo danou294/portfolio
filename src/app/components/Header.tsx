@@ -28,7 +28,7 @@ export default function Header() {
         </a>
 
         {/* Navigation desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -41,9 +41,16 @@ export default function Header() {
         </nav>
 
         {/* Actions desktop */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <LanguageToggle />
           <ThemeToggle />
+          <a
+            href="/docs/cv-daniel-levy.pdf"
+            download
+            className="inline-flex items-center px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+          >
+            {t("nav.downloadCV")}
+          </a>
           <a
             href="#contact"
             className="inline-flex items-center px-4 py-2 rounded-lg bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] text-sm font-medium hover:opacity-90 transition-opacity"
@@ -53,7 +60,7 @@ export default function Header() {
         </div>
 
         {/* Mobile actions */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="lg:hidden flex items-center gap-2">
           <LanguageToggle />
           <ThemeToggle />
           <button
@@ -69,7 +76,7 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden absolute top-full left-0 right-0 glass border-b border-border/50 transition-all duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+      <div className={`lg:hidden absolute top-full left-0 right-0 glass border-b border-border/50 transition-all duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
         <nav className="flex flex-col py-4 px-4 gap-1">
           {navLinks.map((link) => (
             <a
@@ -87,6 +94,14 @@ export default function Header() {
             className="mx-4 mt-2 py-3 text-center rounded-lg bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] font-medium"
           >
             {t("contact.contactMe")}
+          </a>
+          <a
+            href="/docs/cv-daniel-levy.pdf"
+            download
+            onClick={() => setIsMenuOpen(false)}
+            className="mx-4 py-3 text-center rounded-lg border border-border text-foreground font-medium"
+          >
+            {t("nav.downloadCV")}
           </a>
         </nav>
       </div>

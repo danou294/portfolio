@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Contact() {
@@ -49,6 +49,15 @@ export default function Contact() {
           >
             <Linkedin className="mr-2 w-5 h-5" />
             LinkedIn
+          </a>
+
+          <a
+            href="/docs/cv-daniel-levy.pdf"
+            download
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors"
+          >
+            <Download className="mr-2 w-5 h-5" />
+            {t("nav.downloadCV")}
           </a>
         </motion.div>
 

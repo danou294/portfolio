@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import Link from "next/link";
 import frTranslations from "../lib/translations/fr.json";
@@ -144,7 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center mb-8"
           >
             <a
               href="#projects"
@@ -159,6 +159,14 @@ export default function Hero() {
             >
               <Mail className="mr-2 w-5 h-5" />
               {t("contact.contactMe")}
+            </a>
+            <a
+              href="/docs/cv-daniel-levy.pdf"
+              download
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors"
+            >
+              <Download className="mr-2 w-5 h-5" />
+              {t("nav.downloadCV")}
             </a>
           </motion.div>
 
