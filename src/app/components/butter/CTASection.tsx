@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 export function CTASection() {
@@ -55,32 +55,6 @@ export function CTASection() {
           >
             {t("butter.cta.download")}
             <ArrowRight className="w-5 h-5" />
-          </a>
-
-          <a
-            href="https://github.com/danou294/butter-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-border rounded-xl font-semibold text-lg text-foreground hover:bg-secondary transition-colors"
-          >
-            <Github className="w-6 h-6" />
-            {t("butter.cta.viewSource")}
-          </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <a
-            href="https://www.butterguide.com?utm_source=portfolio&utm_medium=web&utm_campaign=case_study"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#F59E0B] hover:underline font-medium"
-          >
-            butterguide.com &rarr;
           </a>
         </motion.div>
 

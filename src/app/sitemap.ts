@@ -23,13 +23,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects/codesphere-fr`,
+      url: `${baseUrl}/projects/staymakom-fr`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects/codesphere-en`,
+      url: `${baseUrl}/projects/staymakom-en`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/sairen-fr`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/sairen-en`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

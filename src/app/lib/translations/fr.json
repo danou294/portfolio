@@ -1,15 +1,15 @@
 {
   "nav": {
     "about": "À propos",
-    "skills": "Compétences", 
-    "projects": "Projets",
+    "skills": "Offres", 
+    "projects": "Réalisations",
     "contact": "Contact",
     "downloadCV": "Télécharger le CV"
   },
   "hero": {
-    "title": "Développeur Full-Stack",
-    "subtitle": "Je crée des applications web et mobiles modernes avec React, Node.js et Flutter",
-    "available": "Disponible pour de nouveaux projets",
+    "title": "Développeur freelance web, mobile & IA",
+    "subtitle": "Je construis des SaaS, apps et MVP de l’idée à la production : cadrage, architecture, développement, tracking et mise en ligne.",
+    "available": "Disponible pour missions produit",
     "technologies": {
       "react": "React",
       "nodejs": "Node.js", 
@@ -33,68 +33,119 @@
       },
       "butter": {
         "title": "Butter",
-        "tech": "Flutter • Firebase • Google Maps",
-        "tagline": "Le guide de restaurants qui ne te déçoit jamais",
-        "description": "Découvre les meilleurs restaurants de Paris. Curation humaine, interface moderne, zéro déception.",
+        "tech": "iOS • Produit • Monétisation",
+        "tagline": "14k+ utilisateurs, 4,9/5 App Store, 20% premium",
+        "description": "Une app de découverte de restaurants reprise, stabilisée, publiée et optimisée sur ses métriques business.",
         "stats": {
-          "restaurants": { "label": "Restaurants", "value": "200+" },
-          "cities": { "label": "Villes", "value": "1" }
+          "users": { "label": "Utilisateurs", "value": "14k+" },
+          "premium": { "label": "Premium", "value": "20%" }
         },
-        "benefits": ["Feed visuel", "Filtres intelligents", "Navigation intégrée", "Base exclusive"]
+        "benefits": ["App Store", "Tracking produit", "Paywall", "Itérations"]
+      },
+      "staymakom": {
+        "title": "StayMakom",
+        "tech": "Réservation • Paiement • Admin",
+        "tagline": "Une activité de voyage transformée en plateforme réservable",
+        "description": "Site public, moteur de réservation, paiement, emails, admin, espace client et partenaires hôteliers.",
+        "stats": {
+          "languages": { "label": "Langues", "value": "3" },
+          "automations": { "label": "Automations", "value": "34" }
+        },
+        "benefits": ["Réservation", "Paiement", "Back-office", "Partenaires"]
       }
     },
-    "cta": "Voir mes projets"
+    "cta": "Voir les réalisations"
   },
   "about": {
-    "title": "À propos",
-    "subtitle": "Développeur Fullstack & Mobile. Conception de produits de bout en bout : modélisation NoSQL, intégration d'API, interfaces modernes, et mise en production (Docker, AWS).",
+    "title": "Je construis des produits qui sortent vraiment",
+    "subtitle": "Je construis des produits web et mobile depuis 2021. Ce qui a changé : les outils, l’IA, les frameworks, la vitesse à laquelle on peut lancer un produit.",
     "approach": {
-      "title": "💡 Approche",
-      "text": "Je privilégie une approche agile et centrée utilisateur, avec un focus sur la performance et la maintenabilité du code."
+      "title": "Approche",
+      "text": "Ce qui n’a pas changé : un bon produit doit être utilisé, mesuré et capable d’évoluer. Je ne livre pas seulement du code : je construis une version claire, exploitable, testable et prête à être améliorée."
     },
-    "objective": "Objectif : Vitesse, Efficacité, Scalabilité.",
+    "since": "Depuis 2021",
+    "objective": "Ma méthode : sortir vite une première version propre, mesurer les usages, améliorer avec de vrais retours.",
     "sections": {
       "web": {
-        "title": "🌐 Web",
+        "title": "Web",
         "tech": "Node.js, React / Next.js (TypeScript)"
       },
       "mobile": {
-        "title": "📱 Mobile", 
+        "title": "Mobile", 
         "tech": "Flutter (Dart)"
       },
       "data": {
-        "title": "💾 Data",
+        "title": "Produit",
         "tech": "Firestore, MongoDB, ETL & automatisations"
       }
     }
   },
   "skills": {
-    "title": "🚀 Compétences",
-    "subtitle": "Ce que je peux apporter",
+    "title": "Ce que je peux construire",
+    "subtitle": "MVP, SaaS, app mobile, outil métier : l’objectif est de livrer un produit utile, mesurable et maintenable.",
     "expertiseLevel": "Niveau d'expertise global",
     "sections": {
       "architecture": {
-        "title": "Architecture & modélisation",
-        "description": "Conception de bases de données et architecture scalable"
+        "title": "MVP web/mobile",
+        "description": "Cadrage, architecture, développement et mise en production d’une première version propre."
       },
       "apis": {
-        "title": "APIs & intégrations propres",
-        "description": "Développement d'APIs REST et intégrations tierces"
+        "title": "SaaS & outils métier",
+        "description": "Back-office, espace client, rôles, facturation, workflows et intégrations métier."
       },
       "devops": {
-        "title": "CI/CD, Docker, déploiements",
-        "description": "Automatisation et déploiement continu"
+        "title": "IA, API & paiement",
+        "description": "Connexions Stripe, RevenueCat, Meta, voix, e-mail, webhooks et services externes."
       },
       "ui": {
-        "title": "UI réactive & performante",
-        "description": "Interfaces modernes et optimisées"
+        "title": "Tracking & conversion",
+        "description": "Instrumentation produit, analyse des parcours, paywall, activation et itérations."
       }
     }
   },
   "projects": {
-    "title": "Mes Projets",
-    "subtitle": "Découvrez mes réalisations récentes",
-    "discover": "Découvrir le projet",
+    "title": "Réalisations orientées produit",
+    "subtitle": "Des produits lancés, mesurés, connectés au business et utilisés en conditions réelles.",
+    "discover": "Voir le cas",
+    "visit": "Voir le site",
+    "caseStudies": {
+      "butter": {
+        "title": "Butter",
+        "type": "App iOS de découverte food",
+        "description": "Reprise technique complète, publication App Store, tracking Amplitude et optimisation du paywall sur les moments d’intention.",
+        "result": "Avant : une audience Instagram non monétisée. Après : une app publiée, 14k+ utilisateurs et 20% de conversion premium.",
+        "role": "Produit, iOS, Firebase, RevenueCat, Amplitude, release App Store",
+        "stats": {
+          "users": "14k+ utilisateurs",
+          "premium": "20% premium",
+          "rating": "4,9/5 App Store"
+        }
+      },
+      "staymakom": {
+        "title": "StayMakom",
+        "type": "Plateforme de réservation hospitality",
+        "description": "Transformation d’une activité de service complexe en plateforme réservable : offres, paiements, emails, espace client, admin et partenaires hôteliers.",
+        "result": "Avant : réservations et demandes suivies à la main. Après : découverte, réservation, paiement et pilotage depuis un seul système.",
+        "role": "Produit, réservation, paiement Revolut, PMS, multilingue, admin",
+        "stats": {
+          "languages": "3 langues",
+          "automations": "34 actions automatisées",
+          "pages": "100+ parcours/pages"
+        }
+      },
+      "sairen": {
+        "title": "Sairen",
+        "type": "Mission IA générative",
+        "description": "Construction de modules SaaS IA multicanaux : agents, conversations, appels, crédits, facturation, monitoring et intégrations externes.",
+        "result": "Un produit IA pilotable, avec contrôle humain, suivi d’usage, billing et garde-fous pour passer de la démo à l’exploitation réelle.",
+        "role": "Architecture, front, back, IA, webhooks, Stripe, Supabase, Meta, Retell",
+        "stats": {
+          "channels": "Omnicanal",
+          "billing": "Crédits & billing",
+          "ai": "Agents IA"
+        }
+      }
+    },
     "butterShowcase": {
       "badge": "Butter App",
       "title": "Application mobile complète",
@@ -126,10 +177,10 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Prêt à collaborer ?",
-    "collaborate": "On travaille ensemble ?",
-    "contactMe": "Me contacter",
-    "responseTime": "Temps de réponse moyen : 24 heures",
+    "subtitle": "Vous avez une app, un SaaS ou un outil métier à lancer ? On peut cadrer une première version, choisir les bons leviers et la mettre en production.",
+    "collaborate": "On construit votre produit ?",
+    "contactMe": "Me parler du projet",
+    "responseTime": "Réponse sous 24h en moyenne",
       "email": "danielevy29@gmail.com",
       "phone": "+33 6 12 34 56 78",
       "location": "Paris, France",

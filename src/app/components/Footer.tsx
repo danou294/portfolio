@@ -20,7 +20,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/in/daniel-music-levy/"
+              href="https://www.linkedin.com/in/daniellevy2904/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
@@ -29,7 +29,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://github.com/danielMusic"
+              href="https://github.com/danou294"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"

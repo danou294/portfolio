@@ -14,13 +14,15 @@ const projectCards = [
     image: "/images/butter.png",
     gradient: "from-amber-400 to-orange-500",
     shadow: "shadow-amber-500/20",
+    href: "butter",
   },
   {
-    id: "codesphere",
-    name: "CodeSphere",
-    image: "/images/codesphere.png",
-    gradient: "from-violet-500 to-purple-600",
-    shadow: "shadow-violet-500/20",
+    id: "staymakom",
+    name: "StayMakom",
+    image: "/images/staymakom.jpeg",
+    gradient: "from-sky-500 to-cyan-600",
+    shadow: "shadow-sky-500/20",
+    href: "staymakom",
   },
 ];
 
@@ -31,6 +33,62 @@ export default function Hero() {
   const getProjectUrl = (id: string) => {
     const lang = language === "fr" ? "fr" : "en";
     return `/projects/${id}-${lang}`;
+  };
+
+  const renderProjectCard = (project: typeof projectCards[number]) => {
+    const projectData = translations.hero.projects[project.id as keyof typeof translations.hero.projects];
+    const card = (
+      <motion.div
+        whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.15)" }}
+        transition={{ duration: 0.2 }}
+        className={`relative h-full overflow-hidden rounded-2xl bg-card border border-border p-6 cursor-pointer ${project.shadow}`}
+      >
+        <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
+
+        <div className="flex items-center gap-4 mb-4">
+          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center p-2.5 shadow-md`}>
+            <Image
+              src={project.image}
+              alt={projectData.title}
+              width={28}
+              height={28}
+              className="object-contain rounded-md"
+              unoptimized
+            />
+          </div>
+          <div>
+            <h3 className="font-bold text-heading text-lg">{projectData.title}</h3>
+            <p className="text-xs text-muted-foreground">{projectData.tech}</p>
+          </div>
+        </div>
+
+        <p className="text-sm font-medium text-heading mb-2">{projectData.tagline}</p>
+        <p className="text-sm text-body line-clamp-2 mb-4">{projectData.description}</p>
+
+        <div className="flex gap-3">
+          {Object.values(projectData.stats).map((stat: { value: string; label: string }, idx: number) => (
+            <div key={idx} className="flex-1 bg-secondary rounded-lg px-3 py-2 text-center">
+              <div className="text-sm font-bold text-heading">{stat.value}</div>
+              <div className="text-xs text-muted-foreground">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    );
+
+    if (project.href.startsWith("http")) {
+      return (
+        <a key={project.id} href={project.href} target="_blank" rel="noopener noreferrer">
+          {card}
+        </a>
+      );
+    }
+
+    return (
+      <Link key={project.id} href={getProjectUrl(project.href)}>
+        {card}
+      </Link>
+    );
   };
 
   return (
@@ -64,8 +122,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6"
-            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif", letterSpacing: "-0.03em" }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6"
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif", letterSpacing: 0 }}
           >
             <span className="text-heading">{t("hero.title").split(" ")[0]} </span>
             <span className="gradient-text">{t("hero.title").split(" ").slice(1).join(" ")}</span>
@@ -112,7 +170,7 @@ export default function Hero() {
             className="flex justify-center gap-4 mb-16"
           >
             <a
-              href="https://github.com/danielMusic"
+              href="https://github.com/danou294"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
@@ -121,7 +179,7 @@ export default function Hero() {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/daniel-music-levy/"
+              href="https://www.linkedin.com/in/daniellevy2904/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
@@ -138,51 +196,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto"
           >
-            {projectCards.map((project) => {
-              const projectData = translations.hero.projects[project.id as keyof typeof translations.hero.projects];
-              return (
-                <Link key={project.id} href={getProjectUrl(project.id)}>
-                  <motion.div
-                    whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.15)" }}
-                    transition={{ duration: 0.2 }}
-                    className={`relative overflow-hidden rounded-2xl bg-card border border-border p-6 cursor-pointer ${project.shadow}`}
-                  >
-                    {/* Gradient accent bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
-
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center p-2.5 shadow-md`}>
-                        <Image
-                          src={project.image}
-                          alt={projectData.title}
-                          width={28}
-                          height={28}
-                          className="object-contain"
-                          unoptimized
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-heading text-lg">{projectData.title}</h3>
-                        <p className="text-xs text-muted-foreground">{projectData.tech}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-sm font-medium text-heading mb-2">{projectData.tagline}</p>
-                    <p className="text-sm text-body line-clamp-2 mb-4">{projectData.description}</p>
-
-                    {/* Stats */}
-                    <div className="flex gap-3">
-                      {Object.values(projectData.stats).map((stat: { value: string; label: string }, idx: number) => (
-                        <div key={idx} className="flex-1 bg-secondary rounded-lg px-3 py-2 text-center">
-                          <div className="text-sm font-bold text-heading">{stat.value}</div>
-                          <div className="text-xs text-muted-foreground">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </Link>
-              );
-            })}
+            {projectCards.map(renderProjectCard)}
           </motion.div>
         </div>
       </div>

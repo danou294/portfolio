@@ -16,6 +16,10 @@ export default function LanguageToggle() {
     // Rediriger vers la bonne page selon le projet
     if (pathname.includes('/projects/butter-')) {
       router.push(`/projects/butter-${newLanguage}`);
+    } else if (pathname.includes('/projects/staymakom-')) {
+      router.push(`/projects/staymakom-${newLanguage}`);
+    } else if (pathname.includes('/projects/sairen-')) {
+      router.push(`/projects/sairen-${newLanguage}`);
     } else if (pathname.includes('/projects/codesphere-')) {
       router.push(`/projects/codesphere-${newLanguage}`);
     }

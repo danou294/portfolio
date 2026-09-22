@@ -1,87 +1,38 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Smartphone, Code } from "lucide-react";
+import { ArrowRight, Bot, ExternalLink, Plane, Smartphone } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import { getArticles } from "../lib/articles-new";
-import { useRef, useEffect, useState } from "react";
 
-const projects = [
+const caseStudies = [
   {
     id: "butter",
     image: "/images/butter.png",
+    href: { fr: "/projects/butter-fr", en: "/projects/butter-en" },
+    icon: Smartphone,
     gradient: "from-amber-400 to-orange-500",
-    type: "mobile",
-    stats: [
-      { valueKey: "15K+", labelKey: "users" },
-      { valueKey: "800+", labelKey: "restos" },
-      { valueKey: "3", labelKey: "villes" },
-    ],
+    tags: ["iOS", "RevenueCat", "Amplitude", "App Store"],
   },
   {
-    id: "codesphere",
-    image: "/images/codesphere.png",
-    gradient: "from-violet-500 to-purple-600",
-    type: "web",
-    stats: [
-      { valueKey: "5K+", labelKey: "devs" },
-      { valueKey: "50K+", labelKey: "deploys" },
-      { valueKey: "99.9%", labelKey: "uptime" },
-    ],
+    id: "staymakom",
+    image: "/images/staymakom.jpeg",
+    href: { fr: "/projects/staymakom-fr", en: "/projects/staymakom-en" },
+    icon: Plane,
+    gradient: "from-sky-500 to-cyan-600",
+    tags: ["Booking", "Revolut", "PMS", "Admin"],
+  },
+  {
+    id: "sairen",
+    image: "/images/sairen-logo.jpeg",
+    href: { fr: "/projects/sairen-fr", en: "/projects/sairen-en" },
+    icon: Bot,
+    gradient: "from-emerald-500 to-teal-600",
+    tags: ["IA", "Stripe", "Supabase", "Meta"],
   },
 ];
 
-function AnimatedCounter({ target, suffix = "" }: { target: string; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
-
-  const numericTarget = parseInt(target.replace(/[^0-9]/g, ""), 10);
-  const hasPlus = target.includes("+");
-  const hasPercent = target.includes("%");
-
-  useEffect(() => {
-    if (!isInView || isNaN(numericTarget)) return;
-
-    const duration = 1500;
-    const steps = 40;
-    const increment = numericTarget / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= numericTarget) {
-        setCount(numericTarget);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, duration / steps);
-
-    return () => clearInterval(timer);
-  }, [isInView, numericTarget]);
-
-  const formatNumber = (n: number) => {
-    if (n >= 1000) return `${(n / 1000).toFixed(n % 1000 === 0 ? 0 : 1)}K`;
-    return n.toString();
-  };
-
-  if (isNaN(numericTarget)) {
-    return <span ref={ref}>{target}</span>;
-  }
-
-  return (
-    <span ref={ref}>
-      {numericTarget >= 1000 ? formatNumber(count) : count}
-      {hasPercent ? "%" : ""}
-      {hasPlus ? "+" : ""}
-      {suffix}
-    </span>
-  );
-}
-
 export default function Projects() {
   const { t, language } = useLanguage();
-  const articles = getArticles(language);
 
   return (
     <section id="projects" className="relative py-24 bg-background">
@@ -101,89 +52,99 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Project showcase cards — alternating layout */}
-        <div className="space-y-12">
-          {projects.map((project, index) => {
-            const article = articles.find((a) => a.id === project.id);
-            if (!article) return null;
-
-            const projectUrl =
-              project.id === "butter"
-                ? language === "fr" ? "/projects/butter-fr" : "/projects/butter-en"
-                : language === "fr" ? "/projects/codesphere-fr" : "/projects/codesphere-en";
-
-            const isReversed = index % 2 === 1;
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {caseStudies.map((study, index) => {
+            const Icon = study.icon;
+            const href = typeof study.href === "string" ? study.href : study.href[language];
+            const isExternal = href.startsWith("http");
 
             return (
               <motion.a
-                key={project.id}
-                href={projectUrl}
-                initial={{ opacity: 0, y: 30 }}
+                key={study.id}
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="group block"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:shadow-xl"
               >
-                <div className={`relative flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} overflow-hidden rounded-3xl bg-card border border-border hover:shadow-xl transition-all`}>
-                  {/* Gradient accent + mockup side */}
-                  <div className={`relative flex-shrink-0 w-full lg:w-2/5 bg-gradient-to-br ${project.gradient} p-8 flex items-center justify-center min-h-[240px]`}>
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center p-4 shadow-lg">
+                <div className={`relative flex min-h-44 items-center justify-center bg-gradient-to-br ${study.gradient} p-8`}>
+                  <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-white/90 p-4 shadow-lg">
+                    {study.image ? (
                       <Image
-                        src={project.image}
-                        alt={article.title}
-                        width={60}
-                        height={60}
-                        className="object-contain"
+                        src={study.image}
+                        alt={t(`projects.caseStudies.${study.id}.title`)}
+                        width={64}
+                        height={64}
+                        className="max-h-16 w-auto object-contain"
                         unoptimized
                       />
+                    ) : (
+                      <Icon className="h-10 w-10 text-[#111113]" />
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-5">
+                    <div className="mb-3 flex items-start justify-between gap-4">
+                      <div>
+                        <p className="mb-1 text-xs font-semibold uppercase text-muted-foreground">
+                          {t(`projects.caseStudies.${study.id}.type`)}
+                        </p>
+                        <h3 className="text-2xl font-bold text-heading">
+                          {t(`projects.caseStudies.${study.id}.title`)}
+                        </h3>
+                      </div>
+                      <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-muted-foreground" />
                     </div>
+
+                    <p className="mb-4 text-sm leading-relaxed text-body">
+                      {t(`projects.caseStudies.${study.id}.description`)}
+                    </p>
+
+                    <p className="rounded-lg bg-secondary px-4 py-3 text-sm font-medium leading-relaxed text-heading">
+                      {t(`projects.caseStudies.${study.id}.result`)}
+                    </p>
                   </div>
 
-                  {/* Content side */}
-                  <div className="flex-1 p-8 lg:p-10 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-2xl font-bold text-heading">
-                          {article.title}
-                        </h3>
-                        {project.type === "mobile" ? (
-                          <Smartphone className="w-4 h-4 text-muted-foreground" />
-                        ) : (
-                          <Code className="w-4 h-4 text-muted-foreground" />
-                        )}
-                      </div>
-                      <p className="text-body mb-6">{article.description}</p>
+                  <div className="mb-5 flex flex-wrap gap-2">
+                    {study.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-background px-3 py-1 text-xs font-medium text-muted-foreground ring-1 ring-border"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {article.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 rounded-full bg-secondary text-xs font-medium text-muted-foreground"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="mb-5 mt-auto grid grid-cols-1 gap-2">
+                    {["users", "premium", "rating", "languages", "automations", "pages", "channels", "billing", "ai"].map((statKey) => {
+                      const value = t(`projects.caseStudies.${study.id}.stats.${statKey}`);
+                      if (value === `projects.caseStudies.${study.id}.stats.${statKey}`) return null;
 
-                    {/* Animated stats */}
-                    <div className="flex gap-4 mb-6">
-                      {project.stats.map((stat, idx) => (
-                        <div key={idx} className="flex-1 text-center p-3 rounded-xl bg-secondary">
-                          <div className="text-xl font-bold text-heading">
-                            <AnimatedCounter target={stat.valueKey} />
-                          </div>
-                          <div className="text-xs text-muted-foreground capitalize">{stat.labelKey}</div>
+                      return (
+                        <div
+                          key={statKey}
+                          className="rounded-lg border border-border bg-background px-3 py-2 text-sm font-semibold text-heading"
+                        >
+                          {value}
                         </div>
-                      ))}
-                    </div>
+                      );
+                    })}
+                  </div>
 
-                    <div className="flex items-center gap-2 text-sm font-medium text-[#F59E0B] group-hover:gap-3 transition-all">
-                      {t("projects.discover")}
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
+                  <p className="mb-5 text-xs leading-relaxed text-muted-foreground">
+                    {t(`projects.caseStudies.${study.id}.role`)}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#B45309] transition-all group-hover:gap-3 dark:text-[#FCD34D]">
+                    {isExternal ? t("projects.visit") : t("projects.discover")}
+                    {isExternal ? <ExternalLink className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
                   </div>
                 </div>
               </motion.a>

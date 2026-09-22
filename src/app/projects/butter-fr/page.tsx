@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ButterPageClient from "./ButterPageClient";
 
 export const metadata: Metadata = {
-  title: "Butter — Guide Restaurant Social",
+  title: "Butter — App iOS food & monétisation",
   description:
-    "Butter est une application mobile Flutter qui centralise les meilleurs restaurants. 15K+ utilisateurs, 800+ restos, 3 villes. Curation humaine, interface moderne, zero deception.",
+    "Butter est une app iOS de découverte de restaurants reprise, publiée et optimisée : 14k+ utilisateurs, 4,9/5 sur l'App Store et 20% de conversion premium.",
   openGraph: {
-    title: "Butter — Guide Restaurant Social | Daniel Levy",
+    title: "Butter — App iOS food & monétisation | Daniel Levy",
     description:
-      "Application mobile Flutter pour decouvrir les meilleurs restaurants. 15K+ utilisateurs, 800+ restos, 3 villes.",
+      "App iOS de découverte food : 14k+ utilisateurs, 4,9/5 App Store et 20% de conversion premium.",
     url: "https://www.levy-daniel.fr/projects/butter-fr",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },

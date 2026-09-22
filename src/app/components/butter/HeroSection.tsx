@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 export function HeroSection() {
@@ -55,18 +55,6 @@ export function HeroSection() {
               >
                 {t("article.getOnAppStore")}
                 <ArrowRight className="w-4 h-4" />
-              </motion.a>
-
-              <motion.a
-                href="https://github.com/danou294/butter-app"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 border-2 border-border rounded-xl flex items-center justify-center gap-3 text-foreground font-semibold hover:bg-secondary transition-colors"
-              >
-                <Github className="w-5 h-5" />
-                {t("article.viewCode")}
               </motion.a>
             </div>
 

@@ -21,7 +21,7 @@ export default function Header() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-bold text-lg tracking-tight text-heading"
+          className="font-bold text-lg text-heading"
           style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
         >
           daniel<span className="text-[#F59E0B]">.</span>levy

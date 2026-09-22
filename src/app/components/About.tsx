@@ -33,7 +33,6 @@ export default function About() {
           >
             <div className="p-8 rounded-2xl bg-card border border-border">
               <div className="space-y-4 text-body">
-                <p>{t("about.subtitle")}</p>
                 <p>{t("about.approach.text")}</p>
                 <p className="font-semibold text-heading">{t("about.objective")}</p>
               </div>
@@ -41,7 +40,7 @@ export default function About() {
 
             <div className="flex flex-wrap gap-3 mt-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/20 text-sm font-medium text-[#B45309] dark:text-[#FCD34D]">
-                5+ ans d&apos;experience
+                {t("about.since")}
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-sm font-medium text-emerald-700 dark:text-emerald-400">
                 {t("hero.available")}

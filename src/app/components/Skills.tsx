@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const skills = [
-  { name: "React", color: "#61DAFB" },
   { name: "Next.js", color: "#000000" },
+  { name: "React", color: "#61DAFB" },
   { name: "TypeScript", color: "#3178C6" },
   { name: "Node.js", color: "#339933" },
+  { name: "Swift", color: "#FA7343" },
   { name: "Flutter", color: "#02569B" },
+  { name: "Supabase", color: "#3ECF8E" },
   { name: "Firebase", color: "#FFCA28" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "Docker", color: "#2496ED" },
-  { name: "AWS", color: "#FF9900" },
+  { name: "Stripe", color: "#635BFF" },
+  { name: "RevenueCat", color: "#FF6B35" },
+  { name: "Amplitude", color: "#3B82F6" },
+  { name: "IA & APIs", color: "#EC4899" },
   { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "REST API", color: "#F59E0B" },
-  { name: "CI/CD", color: "#EC4899" },
 ];
 
 const services = [

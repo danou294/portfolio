@@ -42,7 +42,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/daniel-music-levy/"
+            href="https://www.linkedin.com/in/daniellevy2904/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors"
