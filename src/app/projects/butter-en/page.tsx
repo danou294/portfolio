@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ButterJsonLd } from "../../components/ButterJsonLd";
+import { LanguageProvider } from "../../contexts/LanguageContext";
 import ButterPageClient from "../butter-fr/ButterPageClient";
 
 export const metadata: Metadata = {
@@ -27,7 +28,9 @@ export default function ButterEnPage() {
   return (
     <>
       <ButterJsonLd lang="en" />
-      <ButterPageClient lang="en" />
+      <LanguageProvider>
+        <ButterPageClient lang="en" />
+      </LanguageProvider>
     </>
   );
 }

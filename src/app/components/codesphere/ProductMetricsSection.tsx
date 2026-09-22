@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import { TrendingUp, Clock, Zap, Target } from "lucide-react";
 
 const metrics = [

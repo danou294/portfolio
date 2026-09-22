@@ -1,63 +1,43 @@
-"use client";
-import { motion } from "framer-motion";
-import { useLanguage } from "../contexts/LanguageContext";
+type Messages = typeof import("../lib/translations/fr.json");
 
-export default function About() {
-  const { t } = useLanguage();
-
+export default function About({ messages }: { messages: Messages }) {
   return (
     <section id="about" className="relative py-24 bg-background">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-4">
-            {t("about.title")}
+            {messages.about.title}
           </h2>
           <p className="text-body max-w-3xl mx-auto text-lg">
-            {t("about.subtitle")}
+            {messages.about.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Narrative */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div>
             <div className="p-8 rounded-2xl bg-card border border-border">
               <div className="space-y-4 text-body">
-                <p>{t("about.approach.text")}</p>
-                <p className="font-semibold text-heading">{t("about.objective")}</p>
+                <p>{messages.about.approach.text}</p>
+                <p className="font-semibold text-heading">{messages.about.objective}</p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-3 mt-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/20 text-sm font-medium text-[#B45309] dark:text-[#FCD34D]">
-                {t("about.since")}
+                {messages.about.since}
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-sm font-medium text-emerald-700 dark:text-emerald-400">
-                {t("hero.available")}
+                {messages.hero.available}
               </span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Expertise areas */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div>
             <div className="p-8 rounded-2xl bg-card border border-border">
               <h3 className="text-2xl font-bold text-heading mb-6">
-                {t("skills.subtitle")}
+                {messages.skills.subtitle}
               </h3>
 
               <div className="space-y-4">
@@ -76,17 +56,17 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-heading mb-1">
-                        {t(`skills.sections.${item.key}.title`)}
+                        {messages.skills.sections[item.key as keyof typeof messages.skills.sections].title}
                       </h4>
                       <p className="text-sm text-body">
-                        {t(`skills.sections.${item.key}.description`)}
+                        {messages.skills.sections[item.key as keyof typeof messages.skills.sections].description}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

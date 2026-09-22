@@ -1,6 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
-import { useLanguage } from "../contexts/LanguageContext";
+type Messages = typeof import("../lib/translations/fr.json");
 
 const skills = [
   { name: "Next.js", color: "#000000" },
@@ -41,43 +39,24 @@ const services = [
   },
 ];
 
-export default function Skills() {
-  const { t } = useLanguage();
-
+export default function Skills({ messages }: { messages: Messages }) {
   return (
     <section id="skills" className="relative py-24 bg-card">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-4">
-            {t("skills.title")}
+            {messages.skills.title}
           </h2>
           <p className="text-body max-w-2xl mx-auto text-lg">
-            {t("skills.subtitle")}
+            {messages.skills.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Skills pills */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-3 mb-16 max-w-4xl mx-auto"
-        >
-          {skills.map((skill, index) => (
-            <motion.span
+        <div className="flex flex-wrap justify-center gap-3 mb-16 max-w-4xl mx-auto">
+          {skills.map((skill) => (
+            <span
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 + index * 0.03 }}
-              whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-background border border-border text-sm font-medium text-heading cursor-default hover:border-[#F59E0B]/50 hover:shadow-sm transition-all"
             >
               <span
@@ -85,21 +64,16 @@ export default function Skills() {
                 style={{ backgroundColor: skill.color }}
               />
               {skill.name}
-            </motion.span>
+            </span>
           ))}
-        </motion.div>
+        </div>
 
         {/* Services grid 2x2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={service.titleKey}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="p-6 rounded-2xl bg-background border border-border hover:shadow-lg transition-all group"
+              className="p-6 rounded-2xl bg-background border border-border hover:shadow-lg hover:-translate-y-1 transition-all group"
             >
               <div className="flex items-start gap-4">
                 <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform`}>
@@ -107,14 +81,14 @@ export default function Skills() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-heading text-lg mb-2">
-                    {t(service.titleKey)}
+                    {messages.skills.sections[service.titleKey.split(".").at(-2) as keyof typeof messages.skills.sections]?.title}
                   </h3>
                   <p className="text-body text-sm">
-                    {t(service.descriptionKey)}
+                    {messages.skills.sections[service.descriptionKey.split(".").at(-2) as keyof typeof messages.skills.sections]?.description}
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

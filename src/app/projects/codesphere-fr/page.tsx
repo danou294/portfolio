@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LanguageProvider } from "../../contexts/LanguageContext";
 import CodeSpherePageClient from "./CodeSpherePageClient";
 
 export const metadata: Metadata = {
@@ -18,5 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default function CodeSphereFrPage() {
-  return <CodeSpherePageClient lang="fr" />;
+  return (
+    <LanguageProvider>
+      <CodeSpherePageClient lang="fr" />
+    </LanguageProvider>
+  );
 }

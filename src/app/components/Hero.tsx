@@ -1,11 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
 import Link from "next/link";
-import frTranslations from "../lib/translations/fr.json";
-import enTranslations from "../lib/translations/en.json";
+
+type Messages = typeof import("../lib/translations/fr.json");
 
 const projectCards = [
   {
@@ -15,6 +12,7 @@ const projectCards = [
     gradient: "from-amber-400 to-orange-500",
     shadow: "shadow-amber-500/20",
     href: "butter",
+    statKeys: ["users", "premium"],
   },
   {
     id: "staymakom",
@@ -23,25 +21,21 @@ const projectCards = [
     gradient: "from-sky-500 to-cyan-600",
     shadow: "shadow-sky-500/20",
     href: "staymakom",
+    statKeys: ["languages", "automations"],
   },
 ];
 
-export default function Hero() {
-  const { t, language } = useLanguage();
-  const translations = language === "fr" ? frTranslations : enTranslations;
-
+export default function Hero({ messages, lang }: { messages: Messages; lang: "fr" | "en" }) {
   const getProjectUrl = (id: string) => {
-    const lang = language === "fr" ? "fr" : "en";
     return `/projects/${id}-${lang}`;
   };
 
   const renderProjectCard = (project: typeof projectCards[number]) => {
-    const projectData = translations.hero.projects[project.id as keyof typeof translations.hero.projects];
+    const projectData = messages.hero.projects[project.id as keyof typeof messages.hero.projects];
+    const stats = projectData.stats as Record<string, { value: string; label: string }>;
     const card = (
-      <motion.div
-        whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.15)" }}
-        transition={{ duration: 0.2 }}
-        className={`relative h-full overflow-hidden rounded-2xl bg-card border border-border p-6 cursor-pointer ${project.shadow}`}
+      <div
+        className={`relative h-full overflow-hidden rounded-2xl bg-card border border-border p-6 cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl ${project.shadow}`}
       >
         <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
 
@@ -65,14 +59,14 @@ export default function Hero() {
         <p className="text-sm text-body line-clamp-2 mb-4">{projectData.description}</p>
 
         <div className="flex gap-3">
-          {Object.values(projectData.stats).map((stat: { value: string; label: string }, idx: number) => (
-            <div key={idx} className="flex-1 bg-secondary rounded-lg px-3 py-2 text-center">
-              <div className="text-sm font-bold text-heading">{stat.value}</div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
+          {project.statKeys.map((statKey) => (
+            <div key={statKey} className="flex-1 bg-secondary rounded-lg px-3 py-2 text-center">
+              <div className="text-sm font-bold text-heading">{stats[statKey].value}</div>
+              <div className="text-xs text-muted-foreground">{stats[statKey].label}</div>
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     );
 
     if (project.href.startsWith("http")) {
@@ -101,54 +95,34 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
         <div className="text-center max-w-4xl mx-auto">
           {/* Available badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 mb-8"
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 mb-8">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
             <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
-              {t("hero.available")}
+              {messages.hero.available}
             </span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6"
-          >
-            <span className="text-heading">{t("hero.title").split(" ")[0]} </span>
-            <span className="gradient-text">{t("hero.title").split(" ").slice(1).join(" ")}</span>
-          </motion.h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6">
+            <span className="text-heading">{messages.hero.title.split(" ")[0]} </span>
+            <span className="gradient-text">{messages.hero.title.split(" ").slice(1).join(" ")}</span>
+          </h1>
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-body max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            {t("hero.subtitle")}
-          </motion.p>
+          <p className="text-lg sm:text-xl text-body max-w-2xl mx-auto mb-10 leading-relaxed">
+            {messages.hero.subtitle}
+          </p>
 
           {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center mb-8"
-          >
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center mb-8">
             <a
               href="#projects"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] font-semibold text-base hover:opacity-90 transition-opacity shadow-lg"
             >
-              {t("hero.cta")}
+              {messages.hero.cta}
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
             <a
@@ -156,7 +130,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors"
             >
               <Mail className="mr-2 w-5 h-5" />
-              {t("contact.contactMe")}
+              {messages.contact.contactMe}
             </a>
             <a
               href="/docs/cv-daniel-levy.pdf"
@@ -164,17 +138,12 @@ export default function Hero() {
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-border text-foreground font-semibold text-base hover:bg-secondary transition-colors"
             >
               <Download className="mr-2 w-5 h-5" />
-              {t("nav.downloadCV")}
+              {messages.nav.downloadCV}
             </a>
-          </motion.div>
+          </div>
 
           {/* Social links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center gap-4 mb-16"
-          >
+          <div className="flex justify-center gap-4 mb-16">
             <a
               href="https://github.com/danou294"
               target="_blank"
@@ -193,17 +162,12 @@ export default function Hero() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
-          </motion.div>
+          </div>
 
           {/* Floating project cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {projectCards.map(renderProjectCard)}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

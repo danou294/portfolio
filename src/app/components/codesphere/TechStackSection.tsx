@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 
 const technologies = [
   { name: "React", color: "#61DAFB" },

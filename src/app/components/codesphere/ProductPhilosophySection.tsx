@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import { Target, Users, Zap, Sparkles } from "lucide-react";
 
 const philosophyPrinciples = [

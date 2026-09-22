@@ -1,7 +1,5 @@
 import './globals.css';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
 import { JsonLd } from './components/JsonLd';
 import type { Metadata } from 'next';
 
@@ -91,6 +89,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.levy-daniel.fr',
+    languages: {
+      fr: 'https://www.levy-daniel.fr',
+      en: 'https://www.levy-daniel.fr/en',
+      'x-default': 'https://www.levy-daniel.fr',
+    },
   },
   icons: {
     icon: [
@@ -102,15 +105,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const themeScript = `
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var theme = savedTheme || systemTheme;
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    } catch (_) {}
+  `;
+
   return (
-    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <body className="bg-theme text-theme transition-colors duration-300">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <JsonLd />
-        <ThemeProvider>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

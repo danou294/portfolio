@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "../../components/MotionShim";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getArticles } from "../../lib/articles-new";
-import { useLanguage } from "../../contexts/LanguageContext";
+import { LanguageProvider, useLanguage } from "../../contexts/LanguageContext";
 import ThemeToggle from "../../components/ThemeToggle";
 import LanguageToggle from "../../components/LanguageToggle";
 
@@ -16,6 +16,14 @@ interface ArticlePageProps {
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
+  return (
+    <LanguageProvider>
+      <ArticlePageContent params={params} />
+    </LanguageProvider>
+  );
+}
+
+function ArticlePageContent({ params }: ArticlePageProps) {
   const { language, t } = useLanguage();
   const resolvedParams = React.use(params);
   const articles = getArticles(language);

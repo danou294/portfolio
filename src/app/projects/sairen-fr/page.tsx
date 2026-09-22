@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyJsonLd } from "../../components/CaseStudyJsonLd";
 import CaseStudyPage from "../../components/CaseStudyPage";
+import { LanguageProvider } from "../../contexts/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Sairen — Mission SaaS IA générative",
@@ -27,7 +28,9 @@ export default function SairenFrPage() {
   return (
     <>
       <CaseStudyJsonLd slug="sairen" lang="fr" />
-      <CaseStudyPage slug="sairen" lang="fr" />
+      <LanguageProvider>
+        <CaseStudyPage slug="sairen" lang="fr" />
+      </LanguageProvider>
     </>
   );
 }

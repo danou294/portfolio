@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import { useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 

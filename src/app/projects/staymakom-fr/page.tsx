@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyJsonLd } from "../../components/CaseStudyJsonLd";
 import CaseStudyPage from "../../components/CaseStudyPage";
+import { LanguageProvider } from "../../contexts/LanguageContext";
 
 export const metadata: Metadata = {
   title: "StayMakom — Plateforme de réservation hospitality",
@@ -27,7 +28,9 @@ export default function StayMakomFrPage() {
   return (
     <>
       <CaseStudyJsonLd slug="staymakom" lang="fr" />
-      <CaseStudyPage slug="staymakom" lang="fr" />
+      <LanguageProvider>
+        <CaseStudyPage slug="staymakom" lang="fr" />
+      </LanguageProvider>
     </>
   );
 }

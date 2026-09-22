@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import Image from "next/image";
 import { Code2, Terminal, Sparkles, ExternalLink, Github } from "lucide-react";
 

@@ -1,18 +1,29 @@
 "use client";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-import LanguageToggle from "./LanguageToggle";
-import { useLanguage } from "../contexts/LanguageContext";
+import HomeLanguageToggle from "./HomeLanguageToggle";
 
-export default function Header() {
-  const { t } = useLanguage();
+export default function Header({
+  labels,
+  currentLanguage,
+}: {
+  labels: {
+    about: string;
+    skills: string;
+    projects: string;
+    contact: string;
+    contactMe: string;
+    downloadCV: string;
+  };
+  currentLanguage: "fr" | "en";
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#about", label: t("nav.about") },
-    { href: "#skills", label: t("nav.skills") },
-    { href: "#projects", label: t("nav.projects") },
-    { href: "#contact", label: t("nav.contact") },
+    { href: "#about", label: labels.about },
+    { href: "#skills", label: labels.skills },
+    { href: "#projects", label: labels.projects },
+    { href: "#contact", label: labels.contact },
   ];
 
   return (
@@ -41,26 +52,26 @@ export default function Header() {
 
         {/* Actions desktop */}
         <div className="hidden lg:flex items-center gap-3">
-          <LanguageToggle />
+          <HomeLanguageToggle currentLanguage={currentLanguage} />
           <ThemeToggle />
           <a
             href="/docs/cv-daniel-levy.pdf"
             download
             className="inline-flex items-center px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary transition-colors"
           >
-            {t("nav.downloadCV")}
+            {labels.downloadCV}
           </a>
           <a
             href="#contact"
             className="inline-flex items-center px-4 py-2 rounded-lg bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            {t("contact.contactMe")}
+            {labels.contactMe}
           </a>
         </div>
 
         {/* Mobile actions */}
         <div className="lg:hidden flex items-center gap-2">
-          <LanguageToggle />
+          <HomeLanguageToggle currentLanguage={currentLanguage} />
           <ThemeToggle />
           <button
             className="flex flex-col justify-center items-center w-10 h-10 gap-1 rounded-lg hover:bg-secondary transition-colors"
@@ -92,7 +103,7 @@ export default function Header() {
             onClick={() => setIsMenuOpen(false)}
             className="mx-4 mt-2 py-3 text-center rounded-lg bg-[#1A1A1A] dark:bg-[#F0EDE8] text-white dark:text-[#111113] font-medium"
           >
-            {t("contact.contactMe")}
+            {labels.contactMe}
           </a>
           <a
             href="/docs/cv-daniel-levy.pdf"
@@ -100,7 +111,7 @@ export default function Header() {
             onClick={() => setIsMenuOpen(false)}
             className="mx-4 py-3 text-center rounded-lg border border-border text-foreground font-medium"
           >
-            {t("nav.downloadCV")}
+            {labels.downloadCV}
           </a>
         </nav>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";

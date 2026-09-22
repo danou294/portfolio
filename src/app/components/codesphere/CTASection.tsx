@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "../MotionShim";
 import { Sparkles, Github } from "lucide-react";
 
 export function CTASection() {

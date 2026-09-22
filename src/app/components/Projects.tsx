@@ -1,8 +1,7 @@
-"use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Bot, ExternalLink, Plane, Smartphone } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+
+type Messages = typeof import("../lib/translations/fr.json");
 
 const caseStudies = [
   {
@@ -31,52 +30,40 @@ const caseStudies = [
   },
 ];
 
-export default function Projects() {
-  const { t, language } = useLanguage();
-
+export default function Projects({ messages, lang }: { messages: Messages; lang: "fr" | "en" }) {
   return (
     <section id="projects" className="relative py-24 bg-background">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-4">
-            {t("projects.title")}
+            {messages.projects.title}
           </h2>
           <p className="text-body max-w-3xl mx-auto text-lg">
-            {t("projects.subtitle")}
+            {messages.projects.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {caseStudies.map((study, index) => {
+          {caseStudies.map((study) => {
             const Icon = study.icon;
-            const href = typeof study.href === "string" ? study.href : study.href[language];
+            const href = typeof study.href === "string" ? study.href : study.href[lang];
             const isExternal = href.startsWith("http");
+            const caseStudy = messages.projects.caseStudies[study.id as keyof typeof messages.projects.caseStudies];
 
             return (
-              <motion.a
+              <a
                 key={study.id}
                 href={href}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:shadow-xl"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className={`relative flex min-h-44 items-center justify-center bg-gradient-to-br ${study.gradient} p-8`}>
                   <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-white/90 p-4 shadow-lg">
                     {study.image ? (
                       <Image
                         src={study.image}
-                        alt={t(`projects.caseStudies.${study.id}.title`)}
+                        alt={caseStudy.title}
                         width={64}
                         height={64}
                         className="h-16 w-16 object-contain"
@@ -92,21 +79,21 @@ export default function Projects() {
                     <div className="mb-3 flex items-start justify-between gap-4">
                       <div>
                         <p className="mb-1 text-xs font-semibold uppercase text-muted-foreground">
-                          {t(`projects.caseStudies.${study.id}.type`)}
+                          {caseStudy.type}
                         </p>
                         <h3 className="text-2xl font-bold text-heading">
-                          {t(`projects.caseStudies.${study.id}.title`)}
+                          {caseStudy.title}
                         </h3>
                       </div>
                       <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-muted-foreground" />
                     </div>
 
                     <p className="mb-4 text-sm leading-relaxed text-body">
-                      {t(`projects.caseStudies.${study.id}.description`)}
+                      {caseStudy.description}
                     </p>
 
                     <p className="rounded-lg bg-secondary px-4 py-3 text-sm font-medium leading-relaxed text-heading">
-                      {t(`projects.caseStudies.${study.id}.result`)}
+                      {caseStudy.result}
                     </p>
                   </div>
 
@@ -123,8 +110,8 @@ export default function Projects() {
 
                   <div className="mb-5 mt-auto grid grid-cols-1 gap-2">
                     {["users", "premium", "rating", "languages", "automations", "pages", "channels", "billing", "ai"].map((statKey) => {
-                      const value = t(`projects.caseStudies.${study.id}.stats.${statKey}`);
-                      if (value === `projects.caseStudies.${study.id}.stats.${statKey}`) return null;
+                      const value = caseStudy.stats[statKey as keyof typeof caseStudy.stats];
+                      if (!value) return null;
 
                       return (
                         <div
@@ -138,15 +125,15 @@ export default function Projects() {
                   </div>
 
                   <p className="mb-5 text-xs leading-relaxed text-muted-foreground">
-                    {t(`projects.caseStudies.${study.id}.role`)}
+                    {caseStudy.role}
                   </p>
 
                   <div className="flex items-center gap-2 text-sm font-semibold text-[#B45309] transition-all group-hover:gap-3 dark:text-[#FCD34D]">
-                    {isExternal ? t("projects.visit") : t("projects.discover")}
+                    {isExternal ? messages.projects.visit : messages.projects.discover}
                     {isExternal ? <ExternalLink className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
                   </div>
                 </div>
-              </motion.a>
+              </a>
             );
           })}
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft } from "lucide-react";
@@ -50,12 +49,7 @@ export default function CaseStudyPage({
 
           <div className="relative mx-auto max-w-6xl px-6">
             <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-8"
-              >
+              <div className="space-y-8">
                 <div className="inline-flex rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground">
                   {caseStudy.eyebrow}
                 </div>
@@ -98,14 +92,9 @@ export default function CaseStudyPage({
                   {caseStudy.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.1 }}
-                className={`flex min-h-[340px] items-center justify-center rounded-lg bg-gradient-to-br ${caseStudy.gradient} p-10`}
-              >
+              <div className={`flex min-h-[340px] items-center justify-center rounded-lg bg-gradient-to-br ${caseStudy.gradient} p-10`}>
                 <div className="flex h-32 w-32 items-center justify-center rounded-lg bg-white/95 p-6 shadow-2xl">
                   <Image
                     src={caseStudy.image}
@@ -116,25 +105,21 @@ export default function CaseStudyPage({
                     priority
                   />
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-24">
           <div className="space-y-6">
-            {caseStudy.sections.map((section, index) => (
-              <motion.article
+            {caseStudy.sections.map((section) => (
+              <article
                 key={section.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
                 className="rounded-lg border border-border bg-card p-7"
               >
                 <h2 className="mb-3 text-2xl font-bold text-heading">{section.title}</h2>
                 <p className="text-base leading-relaxed text-body">{section.body}</p>
-              </motion.article>
+              </article>
             ))}
           </div>
 
